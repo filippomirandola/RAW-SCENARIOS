@@ -5,6 +5,10 @@ export default {
 		extend: {
 			fontFamily:{
 				'sans' : 'neue-haas-grotesk-text'
+			},
+
+			colors:{
+				'rosso' : '#E4221F',
 			}
 		},
 	},
