@@ -6,7 +6,7 @@ interface Props {
 const { image } = Astro.props;
 ---
 
-<div class="grid grid-cols-3 sm:grid-cols-12 gap-2 w-full px-2 pb-2">
+<div class="grid grid-cols-4 sm:grid-cols-12 gap-2 w-full px-2 pb-2">
 	<div class="max-sm:hidden sm:col-span-3"></div>
-	<img src={image} alt={image} class="aspect-video first-line:bg-slate-200 col-span-3 sm:col-span-9">
+	<img src={image} alt={image} class="aspect-video col-span-4 sm:col-span-9">
 </div>
