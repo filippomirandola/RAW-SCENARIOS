@@ -7,9 +7,9 @@ interface Props {
 const { it, en } = Astro.props;
 ---
 
-<div class="grid grid-cols-3 sm:grid-cols-12 gap-2 w-full px-2 pb-2">
+<div class="grid grid-cols-3 sm:grid-cols-12 gap-2 w-full px-2 pb-2" >
     <div class="max-sm:hidden sm:col-span-3"></div>
     <p class="it col-span-3 sm:col-span-9 lg:col-span-6 text-2xl font-bold text-rosso">{it}</p>
-    <p class="en col-span-3 sm:col-span-9 lg:col-span-6 text-[2vw] font-bold text-rosso">{en}</p>
+    <p class="en col-span-3 sm:col-span-9 lg:col-span-6 text-2xl font-bold text-rosso">{en}</p>
     <div class="max-sm:hidden lg:col-span-3"></div>
 </div>
