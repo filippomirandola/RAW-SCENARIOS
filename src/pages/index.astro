@@ -94,7 +94,7 @@ import ProjectDescrizione from '../components/projectDescrizione.astro';
       const threshold = Math.max(0, (1 - distance / maxDist) * 100);
 
       imgElement.style.setProperty('--threshold', `${threshold}%`);
-      const brightness = 110 - (threshold * 0.5); // Decrease brightness from 110% to 70%
+      const brightness = 110 - (threshold * 0.4); // Decrease brightness from 110% to 70%
       const contrast = 200 + (threshold * 2); // Increase contrast from 200% to 400%
       imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
     });
