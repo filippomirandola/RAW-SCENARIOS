@@ -19,6 +19,7 @@ let imageDetails = [
   { name: "mais", x: 1100, y: 550, scale: 1, angle: -70 }
 ];
 
+//fino a 640px
 function preload() {
   for (let i = 0; i < imageDetails.length; i++) {
     let imgDetail = imageDetails[i];
