@@ -13,17 +13,17 @@ import ProjectDescrizione from '../components/projectDescrizione.astro';
 
     <!-- Add images with classes for CSS effects -->
     <div class="images-container">
-        <img src="/assets/immagini/avocado.png" alt="avocado" class="threshold" data-x="420" data-y="810" data-scale="0.7" data-angle="0">
-        <img src="/assets/immagini/caffe.png" alt="caffe" class="threshold" data-x="1320" data-y="50" data-scale="1" data-angle="0">
-        <img src="/assets/immagini/gambero.png" alt="gambero" class="threshold" data-x="1100" data-y="840" data-scale="1" data-angle="0">
-        <img src="/assets/immagini/patata.png" alt="patata" class="threshold" data-x="1670" data-y="600" data-scale="0.6" data-angle="0">
-        <img src="/assets/immagini/pomodoro.png" alt="pomodoro" class="threshold" data-x="810" data-y="650" data-scale="1" data-angle="0">
-        <img src="/assets/immagini/riso.png" alt="riso" class="threshold" data-x="1610" data-y="200" data-scale="0.8" data-angle="0">
-        <img src="/assets/immagini/salmone.png" alt="salmone" class="threshold" data-x="50" data-y="50" data-scale="1" data-angle="0">
-        <img src="/assets/immagini/soia.png" alt="soia" class="threshold" data-x="800" data-y="70" data-scale="0.88" data-angle="0">
-        <img src="/assets/immagini/tonno.png" alt="tonno" class="threshold" data-x="160" data-y="400" data-scale="1" data-angle="0">
-        <img src="/assets/immagini/zucchero.png" alt="zucchero" class="threshold" data-x="550" data-y="400" data-scale="0.8" data-angle="0">
-        <img src="/assets/immagini/mais.png" alt="mais" class="threshold" data-x="1100" data-y="550" data-scale="1" data-angle="-70">
+        <img src="/assets/immagini/avocado.png" alt="avocado" class="threshold" data-x="150" data-y="-10" data-scale="0.4" data-angle="0">
+        <img src="/assets/immagini/caffe.png" alt="caffe" class="threshold" data-x="1210" data-y="-550" data-scale="0.55" data-angle="0">
+        <img src="/assets/immagini/gambero.png" alt="gambero" class="threshold" data-x="900" data-y="150" data-scale="0.6" data-angle="0">
+        <img src="/assets/immagini/patata.png" alt="patata" class="threshold" data-x="1450" data-y="-300" data-scale="0.3" data-angle="0">
+        <img src="/assets/immagini/pomodoro.png" alt="pomodoro" class="threshold" data-x="700" data-y="-50" data-scale="0.55" data-angle="0">
+        <img src="/assets/immagini/riso.png" alt="riso" class="threshold" data-x="1490" data-y="-550" data-scale="0.5" data-angle="0">
+        <img src="/assets/immagini/salmone.png" alt="salmone" class="threshold" data-x="-300" data-y="-550" data-scale="0.6" data-angle="0">
+        <img src="/assets/immagini/soia.png" alt="soia" class="threshold" data-x="600" data-y="-600" data-scale="0.6" data-angle="0">
+        <img src="/assets/immagini/tonno.png" alt="tonno" class="threshold" data-x="-40" data-y="-250" data-scale="0.65" data-angle="0">
+        <img src="/assets/immagini/zucchero.png" alt="zucchero" class="threshold" data-x="100" data-y="-270" data-scale="0.45" data-angle="0">
+        <img src="/assets/immagini/mais.png" alt="mais" class="threshold" data-x="1100" data-y="-480" data-scale="0.6" data-angle="-70">
     </div>
 </Layout>
 
@@ -36,24 +36,29 @@ import ProjectDescrizione from '../components/projectDescrizione.astro';
     position: relative;
     width: 100vw;
     height: 100vh;
+    z-index: -1; 
   }
   .threshold {
-    filter: brightness(120%) contrast(200%);
+    filter: brightness(110%) contrast(200%);
     opacity: 30%;
     transition: filter var(--transition-duration, 0.2s) ease-out;
-    z-index: -4;
     position: absolute;
     transform: scale(var(--scale)) rotate(var(--angle));
     width: auto;
     height: auto;
-    max-width: 300px;
-    max-height: 300px;
+  }
+  img, a, h1 {
+    position: relative; 
+    z-index: 1;
   }
 </style>
 
 <script>
   function adjustImagePositions() {
     const images = document.querySelectorAll('.threshold');
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
     images.forEach((img) => {
       const imgElement = img as HTMLElement;
       const x = parseInt(imgElement.dataset.x ?? "0", 10);
@@ -61,15 +66,14 @@ import ProjectDescrizione from '../components/projectDescrizione.astro';
       const scale = parseFloat(imgElement.dataset.scale ?? "1");
       const angle = parseInt(imgElement.dataset.angle ?? "0", 10);
 
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-
       const relativeX = (x / 1920) * viewportWidth; // assuming 1920 is the original width
-      const relativeY = (y / 1080) * viewportHeight; // assuming 1080 is the original height
+      const relativeY = Math.min((y / 1080) * viewportHeight, viewportHeight - 100); // assuming 1080 is the original height
 
       imgElement.style.left = `${relativeX}px`;
       imgElement.style.top = `${relativeY}px`;
-      imgElement.style.transform = `scale(${scale}) rotate(${angle}deg)`;
+
+      const adjustedScale = scale * Math.min(viewportWidth / 1920, viewportHeight / 1080);
+      imgElement.style.transform = `scale(${adjustedScale}) rotate(${angle}deg)`;
     });
   }
 
@@ -90,7 +94,7 @@ import ProjectDescrizione from '../components/projectDescrizione.astro';
       const threshold = Math.max(0, (1 - distance / maxDist) * 100);
 
       imgElement.style.setProperty('--threshold', `${threshold}%`);
-      const brightness = 120 - (threshold * 0.5); // Decrease brightness from 120% to 70%
+      const brightness = 110 - (threshold * 0.5); // Decrease brightness from 110% to 70%
       const contrast = 200 + (threshold * 2); // Increase contrast from 200% to 400%
       imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
     });
@@ -99,6 +103,8 @@ import ProjectDescrizione from '../components/projectDescrizione.astro';
   window.addEventListener('resize', adjustImagePositions);
   window.addEventListener('load', adjustImagePositions);
 </script>
+
+
 
 
 
