@@ -16,12 +16,19 @@ const { title, language } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://use.typekit.net/mqi7xvb.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
     <title>{title}</title>
   </head>
   <body>
     <slot />
   </body>
+
+  <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script is:inline>
+    AOS.init();
+  </script>
 </html>
 
 <style is:global>
