@@ -1,7 +1,7 @@
 ---
 interface Props {
-	title: string;
-	language: string;
+  title: string;
+  language: string;
 }
 
 const { title, language } = Astro.props;
@@ -9,62 +9,65 @@ const { title, language } = Astro.props;
 
 <!doctype html>
 <html lang={language} class="antialiased">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="https://use.typekit.net/mqi7xvb.css">
-		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-		<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
-		<script is:inline>
-		  AOS.init();
-		</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="https://use.typekit.net/mqi7xvb.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        AOS.init();
 
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+        // COOKIE NOTICE
+        const cookieNotice = document.getElementById('cookie-notice');
+        if (!cookieNotice) {
+          console.error('Cookie notice element not found');
+          return;
+        }
+
+        if (localStorage.getItem('cookieNoticeClosed') === 'true') {
+          cookieNotice.classList.add('hidden');
+          console.log('Cookie notice hidden from localStorage');
+        }
+
+        const cookieCloseButton = document.querySelector('.cookie-close');
+        if (!cookieCloseButton) {
+          console.error('Cookie close button not found');
+          return;
+        }
+
+        cookieCloseButton.addEventListener('click', function () {
+          cookieNotice.classList.add('hidden');
+          localStorage.setItem('cookieNoticeClosed', 'true');
+          console.log('Cookie notice closed and hidden');
+        });
+      });
+    </script>
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
+
 <style is:global>
+  * {
+    letter-spacing: -0.5px;
+  }
 
-	*{
-		letter-spacing: -0.5px;
-	}
-	
-	@font-face {
-		font-family: "neue-haas-grotesk-text", sans-serif;
-		font-weight: 700;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "neue-haas-grotesk-display", sans-serif;
-		font-weight: 700;
-		font-style: normal;
-	}
+  @font-face {
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
 
+  @font-face {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
 </style>
-<script is:inline>
-
-  // COOKIE
-
-  if (localStorage.getItem('cookieNoticeClosed') === 'true') {
-      document.getElementById('cookie-notice').classList.add('hidden');
-    }
-
-
-    document.querySelector('.cookie-close').addEventListener('click', function() {
-      document.getElementById('cookie-notice').classList.add('hidden');
-s
-      localStorage.setItem('cookieNoticeClosed', 'true');
-    });
-
-
-	import AOS from 'aos';
-	AOS.init();
-
-
-
-</script>
