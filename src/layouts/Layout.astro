@@ -16,10 +16,10 @@ const { title, language } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="https://use.typekit.net/mqi7xvb.css">
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
 		<script is:inline>
-			AOS.init();
+		  AOS.init();
 		</script>
 
 		<title>{title}</title>
@@ -29,6 +29,10 @@ const { title, language } = Astro.props;
 	</body>
 </html>
 <style is:global>
+
+	*{
+		letter-spacing: -0.5px;
+	}
 	
 	@font-face {
 		font-family: "neue-haas-grotesk-text", sans-serif;
@@ -42,3 +46,25 @@ const { title, language } = Astro.props;
 	}
 
 </style>
+<script>
+
+  // COOKIE
+
+  if (localStorage.getItem('cookieNoticeClosed') === 'true') {
+      document.getElementById('cookie-notice').classList.add('hidden');
+    }
+
+
+    document.querySelector('.cookie-close').addEventListener('click', function() {
+      document.getElementById('cookie-notice').classList.add('hidden');
+s
+      localStorage.setItem('cookieNoticeClosed', 'true');
+    });
+
+
+	import AOS from 'aos';
+	AOS.init();
+
+
+
+</script>
