@@ -1,7 +1,6 @@
 let imgs = [];
-let imgData = [];
 let imgLoaded = false;
-let radiusFactor = 0.8;
+let radiusFactor = 0.75;
 let invertShader;
 let buffer;
 
@@ -19,33 +18,34 @@ let imageDetails = [
   { name: "mais", x: 1100, y: 550, scale: 1, angle: -70 }
 ];
 
-//fino a 640px
 function preload() {
   for (let i = 0; i < imageDetails.length; i++) {
     let imgDetail = imageDetails[i];
     imgs[i] = loadImage(`assets/immagini_inv/${imgDetail.name}.png`, () => {
       if (i === imageDetails.length - 1) imgLoaded = true;
       console.log(`Image ${imgDetail.name} loaded successfully`);
+    }, (err) => {
+      console.error(`Error loading image ${imgDetail.name}`, err);
     });
   }
   invertShader = loadShader('/p5/invertEffect.vert', '/p5/invertEffect.frag');
 }
 
 function setup() {
-  createCanvas(1920, 1080, WEBGL);
-  noLoop();
-  buffer = createGraphics(1920, 1080, WEBGL);
-  buffer.noSmooth(); 
-  buffer.noStroke(); 
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  buffer = createGraphics(windowWidth, windowHeight, WEBGL);
+  buffer.noSmooth();
+  buffer.noStroke();
   buffer.clear(); // buffer with transparent background
   for (let i = 0; i < imageDetails.length; i++) {
     let imgDetail = imageDetails[i];
     imgDetail.img = imgs[i];
   }
+  frameRate(30); // Set the frame rate to 30 FPS
 }
 
 function draw() {
-  if (!imgLoaded) return; 
+  if (!imgLoaded) return;
 
   background(255);
 
@@ -53,7 +53,7 @@ function draw() {
     let imgDetail = imageDetails[i];
     let x = imgDetail.x;
     let y = imgDetail.y;
-    let scaleValue = imgDetail.scale; 
+    let scaleValue = imgDetail.scale;
     let angle = imgDetail.angle;
     let img = imgDetail.img;
 
@@ -69,7 +69,7 @@ function draw() {
     invertShader.setUniform('tex', img);
 
     buffer.push();
-    buffer.translate(img.width / 2, img.height / 2); 
+    buffer.translate(img.width / 2, img.height / 2);
     buffer.rectMode(CENTER);
     buffer.rect(0, 0, img.width, img.height); // rect to apply the shader
     buffer.pop();
@@ -85,5 +85,10 @@ function draw() {
 }
 
 function mouseMoved() {
+  redraw();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
   redraw();
 }
