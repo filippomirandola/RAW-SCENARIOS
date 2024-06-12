@@ -39,7 +39,7 @@ import ProjectDescrizione from '../components/projectDescrizione.astro';
     z-index: -1; 
   }
   .threshold {
-    filter: brightness(110%) contrast(200%);
+    filter: brightness(110%) contrast(1000%);
     opacity: 30%;
     transition: filter var(--transition-duration, 0.2s) ease-out;
     position: absolute;
@@ -95,7 +95,7 @@ import ProjectDescrizione from '../components/projectDescrizione.astro';
 
       imgElement.style.setProperty('--threshold', `${threshold}%`);
       const brightness = 110 - (threshold * 0.4); // Decrease brightness from 110% to 70%
-      const contrast = 200 + (threshold * 2); // Increase contrast from 200% to 400%
+      const contrast = 1000 + (threshold * 2); // Increase contrast from 200% to 400%
       imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
     });
   });
