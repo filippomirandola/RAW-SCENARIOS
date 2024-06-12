@@ -46,3 +46,19 @@ const { title, language } = Astro.props;
 	}
 
 </style>
+<script>
+
+  // COOKIE
+
+  if (localStorage.getItem('cookieNoticeClosed') === 'true') {
+      document.getElementById('cookie-notice').classList.add('hidden');
+    }
+
+
+    document.querySelector('.cookie-close').addEventListener('click', function() {
+      document.getElementById('cookie-notice').classList.add('hidden');
+s
+      localStorage.setItem('cookieNoticeClosed', 'true');
+    });
+
+</script>

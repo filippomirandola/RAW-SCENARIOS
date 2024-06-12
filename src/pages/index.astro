@@ -22,12 +22,12 @@ import ITEN from '../components/ITEN.astro';
     <!-- Coming Soon -->
     <!-- Coming Soon -->
 
-    <div class="flex justify-center items-center mt-40">
+    <!-- <div class="flex justify-center items-center mt-40">
       <div class="text-rosso font-bold text-6xl text-center">
         <p class="it">In Arrivo</p>
         <p class="en">Coming Soon</p>
       </div>
-    </div>
+    </div> -->
 
 
 
@@ -45,10 +45,12 @@ import ITEN from '../components/ITEN.astro';
       <!-- Cookie -->
       <!-- Cookie -->
 
-      <div class="col-span-4 sm:col-span-12 cookie text-rosso text-xl font-bold max-w-96 leading-none mb-2">
-        <div class="flex flex-col justify-between items-start relative">
-          <p class="cookie-close cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-70">[<span class="rotate-45 scale-110">+</span>] </p>
-          <div class="mt-6">
+      <div id="cookie-notice" class="col-span-4 sm:col-span-12 cookie text-rosso text-xl font-bold max-w-96 leading-tight relative mb-2">
+        <p class="cookie-close cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-75">
+          [<span class="rotate-45 scale-110">+</span>]
+        </p>
+        <div class="flex flex-col justify-between items-start mt-6">
+          <div>
             <p class="it leading-tight">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
             <p class="en leading-tight">By continuing to browse this site, you automatically accept cookies.</p>
           </div>
@@ -180,12 +182,6 @@ import ITEN from '../components/ITEN.astro';
 
 
 
-
-  // COOKIE
-
-  document.querySelector('.cookie-close').addEventListener('click', function() {
-      document.querySelector('.cookie').classList.add('hidden');
-    });
 
 </script>
 
