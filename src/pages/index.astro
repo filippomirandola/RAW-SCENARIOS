@@ -83,38 +83,42 @@ import ITEN from '../components/ITEN.astro';
     position: relative; 
     z-index: 1;
   }
+
+  /* ≥1024px */
+  @media (min-width: 1024px) {
+    .threshold:nth-child(1) { --top: 34%; --left: 23%; --width: 10vw; } /* avocado */
+    .threshold:nth-child(2) { --top: 68%; --left: 71%; --width: 6vw; } /* caffe */
+    .threshold:nth-child(3) { --top: 34%; --left: 45%; --width: 25vw; } /* gambero */
+    .threshold:nth-child(4) { --top: 60%; --left: 88%; --width: 10vw; } /* patata */
+    .threshold:nth-child(5) { --top: 65%; --left: 46%; --width: 11vw; } /* pomodoro */
+    .threshold:nth-child(6) { --top: 1%; --left: 50%; --width: 12vw; } /* riso */
+    .threshold:nth-child(7) { --top: 1%; --left: 1%; --width: 35vw; } /* salmone */
+    .threshold:nth-child(8) { --top: 63%; --left: 20%; --width: 16vw; } /* soia */
+    .threshold:nth-child(9) { --top: 33%; --left: 2%; --width: 8vw; } /* tonno */
+    .threshold:nth-child(10) { --top: 37%; --left: 79%; --width: 18vw; } /* zucchero */
+    .threshold:nth-child(11) { --top: 1%; --left: 74%; --width: 25vw; } /* mais */
+  }
+
+  /* 768px ≤ width < 1024px */
+  @media (max-width: 1023px) {
+    .threshold:nth-child(1) { --top: 20%; --left: 28%; --width: 13vw; } /* avocado */
+    .threshold:nth-child(2) { --top:45%; --left: 80%; --width: 8vw; } /* caffe */
+    .threshold:nth-child(3) { --top: 40%; --left: 40%; --width: 28vw; } /* gambero */
+    .threshold:nth-child(4) { --top: 63%; --left: 85%; --width: 12vw; } /* patata */
+    .threshold:nth-child(5) { --top: 65%; --left: 58%; --width: 13.5vw; } /* pomodoro */
+    .threshold:nth-child(6) { --top: 14%; --left: 55%; --width: 15vw; } /* riso */
+    .threshold:nth-child(7) { --top: 1%; --left: 2%; --width: 48vw; } /* salmone */
+    .threshold:nth-child(8) { --top: 54%; --left: 28%; --width: 20vw; } /* soia */
+    .threshold:nth-child(9) { --top: 25%; --left: 5%; --width: 12vw; } /* tonno */
+    .threshold:nth-child(10) { --top: 25%; --left: 75%; --width: 20vw; } /* zucchero */
+    .threshold:nth-child(11) { --top: 1%; --left: 70%; --width: 30vw; } /* mais */
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const imagesData = [
-      { top: '34%', left: '23%', width: '10vw' }, // avocado
-      { top: '68%', left: '71%', width: '6vw' }, // caffe
-      { top: '34%', left: '45%', width: '25vw' }, // gambero
-      { top: '60%', left: '88%', width: '10vw' }, // patata
-      { top: '65%', left: '46%', width: '11vw' }, // pomodoro
-      { top: '1%', left: '50%', width: '12vw' }, // riso
-      { top: '1%', left: '1%', width: '35vw' }, // salmone
-      { top: '63%', left: '20%', width: '16vw' }, // soia
-      { top: '33%', left: '2%', width: '8vw' }, // tonno
-      { top: '37%', left: '79%', width: '18vw' }, // zucchero
-      { top: '1%', left: '74%', width: '25vw' }  // mais
-    ];
-
+ 
     const images = document.querySelectorAll('.threshold');
-    images.forEach((img, index) => {
-      const imgElement = img as HTMLElement;
-      const data = imagesData[index];
-      imgElement.style.setProperty('--top', data.top);
-      imgElement.style.setProperty('--left', data.left);
-      imgElement.style.setProperty('--width', data.width);
-
-      // Debugging logs
-      console.log(`Image ${index + 1}:`);
-      console.log(`Top: ${data.top}`);
-      console.log(`Left: ${data.left}`);
-      console.log(`Width: ${data.width}`);
-    });
 
     document.addEventListener('mousemove', (event) => {
       images.forEach((img) => {
@@ -138,7 +142,6 @@ import ITEN from '../components/ITEN.astro';
     });
   });
 </script>
-
 
 <!-- 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha384-DNa3EMEwCbXdWesI58M+KapvoPndaEq/H61SjvIbqhxlLG0vGzqAF3htFLNBL+Z2" crossorigin="anonymous" is:inline defer></script>
