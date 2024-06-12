@@ -5,95 +5,117 @@ import ITEN from '../components/ITEN.astro';
 
 <Layout title="Welcome to Astro." language=''>
 
-    <!-- Logo -->
-    <!-- Logo -->
-    <!-- Logo -->
-    <!-- Logo -->
 
-    <img src="/logo-2.svg" alt="Logo" class="px-2 pt-1" loading="lazy">
+  <!-- IMMAGINI SFONDO -->
+  <!-- IMMAGINI SFONDO -->
+  <!-- IMMAGINI SFONDO -->
+  <!-- IMMAGINI SFONDO -->
+
+  <div class="fixed inset-0 w-full h-full -z-10 flex flex-wrap justify-center items-center overflow-hidden" >
+    <img src="/assets/immagini/avocado.png" alt="avocado" class="threshold absolute" style="top: 1%; left: 1%; transform: scale(calc(0.1 * (100vw / 1000)))">
+    <img src="/assets/immagini/caffe.png" alt="caffe" class="threshold absolute" style="top: 30%; left: 40%; transform: scale(calc(0.2 * (100vw / 1000)))">
+    <img src="/assets/immagini/gambero.png" alt="gambero" class="threshold absolute" style="top: 50%; left: 20%; transform: scale(calc(0.2 * (100vw / 1000)))">
+    <img src="/assets/immagini/patata.png" alt="patata" class="threshold absolute" style="top: 70%; left: 60%; transform: scale(calc(0.2 * (100vw / 1000)))">
+    <img src="/assets/immagini/pomodoro.png" alt="pomodoro" class="threshold absolute" style="top: 20%; left: 80%; transform: scale(calc(0.2 * (100vw / 1000)))">
+    <img src="/assets/immagini/riso.png" alt="riso" class="threshold absolute" style="top: 40%; left: 10%; transform: scale(calc(0.2 * (100vw / 1000)))">
+    <img src="/assets/immagini/salmone.png" alt="salmone" class="threshold absolute" style="top: 60%; left: 30%; transform: scale(calc(0.2 * (100vw / 1000)))">
+    <img src="/assets/immagini/soia.png" alt="soia" class="threshold absolute" style="top: 80%; left: 50%; transform: scale(calc(0.2 * (100vw / 1000)))">
+    <img src="/assets/immagini/tonno.png" alt="tonno" class="threshold absolute" style="top: 10%; left: 70%; transform: scale(calc(0.2 * (100vw / 1000)))">
+    <img src="/assets/immagini/zucchero.png" alt="zucchero" class="threshold absolute" style="top: 50%; left: 90%; transform: scale(calc(0.2 * (100vw / 1000)))">
+    <img src="/assets/immagini/mais.png" alt="mais" class="threshold absolute" style="top: 30%; left: 50%; transform: scale(calc(0.2 * (100vw / 1000)))">
+  </div>
+
+  <!-- Logo -->
+  <!-- Logo -->
+  <!-- Logo -->
+  <!-- Logo -->
+
+  <img src="/logo-2.svg" alt="Logo" class="px-2 pt-1" data-aos="fade">
+  <!-- <a href="/soy">SOIA</a> -->
 
 
-    <!-- Coming Soon -->
-    <!-- Coming Soon -->
-    <!-- Coming Soon -->
-    <!-- Coming Soon -->
+  <!-- Coming Soon -->
+  <!-- Coming Soon -->
+  <!-- Coming Soon -->
+  <!-- Coming Soon -->
 
-    <!-- <div class="flex justify-center items-center mt-40">
-      <div class="text-rosso font-bold text-6xl text-center">
-        <p class="it">In Arrivo</p>
-        <p class="en">Coming Soon</p>
-      </div>
-    </div> -->
+  <!-- <div class="flex justify-center items-center mt-40">
+    <div class="text-rosso font-bold text-6xl text-center">
+      <p class="it">In Arrivo</p>
+      <p class="en">Coming Soon</p>
+    </div>
+  </div> -->
 
 
 
-    <!-- FOOTER -->
-    <!-- FOOTER -->
-    <!-- FOOTER -->
-    <!-- FOOTER -->
+  <!-- FOOTER -->
+  <!-- FOOTER -->
+  <!-- FOOTER -->
+  <!-- FOOTER -->
 
-    <div class="fixed bottom-0 p-2 grid grid-cols-4 sm:grid-cols-12 gap-4 sm:gap-2 text-3xl sm:text-xl lg:text-3xl font-bold w-full text-rosso">
+  <div class="fixed bottom-0 p-2 grid grid-cols-4 sm:grid-cols-12 gap-4 sm:gap-2 text-3xl sm:text-xl lg:text-3xl font-bold w-full text-rosso">
 
-      <!-- Cookie -->
-      <!-- Cookie -->
-      <!-- Cookie -->
-      <!-- Cookie -->
+    <!-- Cookie -->
+    <!-- Cookie -->
+    <!-- Cookie -->
+    <!-- Cookie -->
 
-      <div id="cookie-notice" class="col-span-4 sm:col-span-12 cookie text-rosso text-xl font-bold max-w-96 leading-tight relative mb-2">
-        <p class="cookie-close cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-75">
-          [<span class="rotate-45 scale-110">+</span>]
-        </p>
-        <div class="flex flex-col justify-between items-start mt-6">
-          <div>
-            <p class="it leading-tight">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
-            <p class="en leading-tight">By continuing to browse this site, you automatically accept cookies.</p>
-          </div>
+    <div id="cookie-notice" class="col-span-4 sm:col-span-12 cookie text-rosso text-xl font-bold max-w-96 leading-tight relative mb-2">
+      <p class="cookie-close cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-75">
+        [<span class="rotate-45 scale-110">+</span>]
+      </p>
+      <div class="flex flex-col justify-between items-start mt-6">
+        <div>
+          <p class="it leading-tight">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
+          <p class="en leading-tight">By continuing to browse this site, you automatically accept cookies.</p>
         </div>
       </div>
-
-      <!-- Informazioni -->
-      <!-- Informazioni -->
-      <!-- Informazioni -->
-      <!-- Informazioni -->
-
-      <div class="flex flex-col col-span-3">
-        <p>Dotdotdot</p>
-        <a href="https://g.co/kgs/6SG4Nfu" target="_blank" class="hover:underline">Via Tertulliano 68, Milano</a>
-      </div>
-      <div class="flex flex-col col-span-3">
-        <p class="it">22 Giugno 2024</p>
-        <p class="it">11h00 - 19h00</p>
-        <p class="en">22 June 2024</p>
-        <p class="en">11AM - 7PM</p>
-      </div>
-
-      <div class="flex flex-col col-span-3">
-        <p class="it uppercase">Ingresso Gratuito</p>
-        <p class="en uppercase">Free Entry</p>
-        <a href="https://www.instagram.com/rawscenarios?igsh=MThjemFlamU4OG1yeg==" target="_blank" class="hover:underline">@RAWSCENARIOS</a>
-      </div>
-
-      
-      <div class="sm:ml-auto col-span-3">
-        <ITEN></ITEN>
-      </div>
     </div>
+
+    <!-- Informazioni -->
+    <!-- Informazioni -->
+    <!-- Informazioni -->
+    <!-- Informazioni -->
+
+    <div class="flex flex-col col-span-3">
+      <p>Dotdotdot</p>
+      <a href="https://g.co/kgs/6SG4Nfu" target="_blank" class="hover:underline">Via Tertulliano 68, Milano</a>
+    </div>
+    <div class="flex flex-col col-span-3">
+      <p class="it">22 Giugno 2024</p>
+      <p class="it">11h00 - 19h00</p>
+      <p class="en">22 June 2024</p>
+      <p class="en">11AM - 7PM</p>
+    </div>
+
+    <div class="flex flex-col col-span-3">
+      <p class="it uppercase">Ingresso Gratuito</p>
+      <p class="en uppercase">Free Entry</p>
+      <a href="https://www.instagram.com/rawscenarios?igsh=MThjemFlamU4OG1yeg==" target="_blank" class="hover:underline">@RAWSCENARIOS</a>
+    </div>
+
     
-
-
-    <div class="images-container">
-        <img src="/assets/immagini/avocado.png" alt="avocado" class="threshold" data-x="150" data-y="-10" data-scale="0.4" data-angle="0">
-        <img src="/assets/immagini/caffe.png" alt="caffe" class="threshold" data-x="1210" data-y="-550" data-scale="0.55" data-angle="0">
-        <img src="/assets/immagini/gambero.png" alt="gambero" class="threshold" data-x="900" data-y="150" data-scale="0.6" data-angle="0">
-        <img src="/assets/immagini/patata.png" alt="patata" class="threshold" data-x="1450" data-y="-300" data-scale="0.3" data-angle="0">
-        <img src="/assets/immagini/pomodoro.png" alt="pomodoro" class="threshold" data-x="700" data-y="-50" data-scale="0.55" data-angle="0">
-        <img src="/assets/immagini/riso.png" alt="riso" class="threshold" data-x="1490" data-y="-550" data-scale="0.5" data-angle="0">
-        <img src="/assets/immagini/salmone.png" alt="salmone" class="threshold" data-x="-300" data-y="-550" data-scale="0.6" data-angle="0">
-        <img src="/assets/immagini/soia.png" alt="soia" class="threshold" data-x="600" data-y="-600" data-scale="0.6" data-angle="0">
-        <img src="/assets/immagini/tonno.png" alt="tonno" class="threshold" data-x="-40" data-y="-250" data-scale="0.65" data-angle="0">
-        <img src="/assets/immagini/zucchero.png" alt="zucchero" class="threshold" data-x="100" data-y="-270" data-scale="0.45" data-angle="0">
-        <img src="/assets/immagini/mais.png" alt="mais" class="threshold" data-x="1100" data-y="-480" data-scale="0.6" data-angle="-70">
+    <div class="sm:ml-auto col-span-3">
+      <ITEN></ITEN>
     </div>
+  </div>
+  
+
+
+  <!-- <div class="images-container">
+      <img src="/assets/immagini/avocado.png" alt="avocado" class="threshold" data-x="1500" data-y="-10" data-scale="0.4" data-angle="0">
+      <img src="/assets/immagini/caffe.png" alt="caffe" class="threshold" data-x="1210" data-y="-550" data-scale="0.55" data-angle="0">
+      <img src="/assets/immagini/gambero.png" alt="gambero" class="threshold" data-x="900" data-y="150" data-scale="0.6" data-angle="0">
+      <img src="/assets/immagini/patata.png" alt="patata" class="threshold" data-x="1450" data-y="-300" data-scale="0.3" data-angle="0">
+      <img src="/assets/immagini/pomodoro.png" alt="pomodoro" class="threshold" data-x="700" data-y="-50" data-scale="0.55" data-angle="0">
+      <img src="/assets/immagini/riso.png" alt="riso" class="threshold" data-x="1490" data-y="-550" data-scale="0.5" data-angle="0">
+      <img src="/assets/immagini/salmone.png" alt="salmone" class="threshold" data-x="-300" data-y="-550" data-scale="0.6" data-angle="0">
+      <img src="/assets/immagini/soia.png" alt="soia" class="threshold" data-x="600" data-y="-600" data-scale="0.6" data-angle="0">
+      <img src="/assets/immagini/tonno.png" alt="tonno" class="threshold" data-x="-40" data-y="-250" data-scale="0.65" data-angle="0">
+      <img src="/assets/immagini/zucchero.png" alt="zucchero" class="threshold" data-x="100" data-y="-270" data-scale="0.45" data-angle="0">
+      <img src="/assets/immagini/mais.png" alt="mais" class="threshold" data-x="1100" data-y="-480" data-scale="0.6" data-angle="-70">
+  </div> -->
+
 </Layout>
 
 <style>
@@ -113,7 +135,7 @@ import ITEN from '../components/ITEN.astro';
     opacity: 30%;
     transition: filter var(--transition-duration, 0.1s) ease-out;
     position: absolute;
-    transform: scale(var(--scale)) rotate(var(--angle));
+    /* transform: scale(var(--scale)) rotate(var(--angle)); */
     width: auto;
     height: auto;
   }
@@ -124,28 +146,28 @@ import ITEN from '../components/ITEN.astro';
 </style>
 
 <script>
-  function adjustImagePositions() {
-    const images = document.querySelectorAll('.threshold');
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
+  // function adjustImagePositions() {
+  //   const images = document.querySelectorAll('.threshold');
+  //   const viewportWidth = window.innerWidth;
+  //   const viewportHeight = window.innerHeight;
 
-    images.forEach((img) => {
-      const imgElement = img as HTMLElement;
-      const x = parseInt(imgElement.dataset.x ?? "0", 10);
-      const y = parseInt(imgElement.dataset.y ?? "0", 10);
-      const scale = parseFloat(imgElement.dataset.scale ?? "1");
-      const angle = parseInt(imgElement.dataset.angle ?? "0", 10);
+  //   images.forEach((img) => {
+  //     const imgElement = img as HTMLElement;
+  //     const x = parseInt(imgElement.dataset.x ?? "0", 10);
+  //     const y = parseInt(imgElement.dataset.y ?? "0", 10);
+  //     const scale = parseFloat(imgElement.dataset.scale ?? "1");
+  //     const angle = parseInt(imgElement.dataset.angle ?? "0", 10);
 
-      const relativeX = (x / 1920) * viewportWidth; // assuming 1920 is the original width
-      const relativeY = Math.min((y / 1080) * viewportHeight, viewportHeight - 100); // assuming 1080 is the original height
+  //     const relativeX = (x / 1920) * viewportWidth; // assuming 1920 is the original width
+  //     const relativeY = Math.min((y / 1080) * viewportHeight, viewportHeight - 100); // assuming 1080 is the original height
 
-      imgElement.style.left = `${relativeX}px`;
-      imgElement.style.top = `${relativeY}px`;
+  //     imgElement.style.left = `${relativeX}px`;
+  //     imgElement.style.top = `${relativeY}px`;
 
-      const adjustedScale = scale * Math.min(viewportWidth / 1920, viewportHeight / 1080);
-      imgElement.style.transform = `scale(${adjustedScale}) rotate(${angle}deg)`;
-    });
-  }
+  //     const adjustedScale = scale * Math.min(viewportWidth / 1920, viewportHeight / 1080);
+  //     imgElement.style.transform = `scale(${adjustedScale}) rotate(${angle}deg)`;
+  //   });
+  // }
 
   document.addEventListener('mousemove', (event) => {
     const images = document.querySelectorAll('.threshold');
