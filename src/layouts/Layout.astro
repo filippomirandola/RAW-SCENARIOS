@@ -16,37 +16,7 @@ const { title, language } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://use.typekit.net/mqi7xvb.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script is:inline>
-      document.addEventListener('DOMContentLoaded', () => {
-        AOS.init();
 
-        // COOKIE NOTICE
-        const cookieNotice = document.getElementById('cookie-notice');
-        if (!cookieNotice) {
-          console.error('Cookie notice element not found');
-          return;
-        }
-
-        if (localStorage.getItem('cookieNoticeClosed') === 'true') {
-          cookieNotice.classList.add('hidden');
-          console.log('Cookie notice hidden from localStorage');
-        }
-
-        const cookieCloseButton = document.querySelector('.cookie-close');
-        if (!cookieCloseButton) {
-          console.error('Cookie close button not found');
-          return;
-        }
-
-        cookieCloseButton.addEventListener('click', function () {
-          cookieNotice.classList.add('hidden');
-          localStorage.setItem('cookieNoticeClosed', 'true');
-          console.log('Cookie notice closed and hidden');
-        });
-      });
-    </script>
     <title>{title}</title>
   </head>
   <body>
@@ -71,3 +41,11 @@ const { title, language } = Astro.props;
     font-style: normal;
   }
 </style>
+
+<script is:inline>
+
+  document.querySelector('.cookie-close').addEventListener('click', function() {
+    document.querySelector('.cookie').classList.add('hidden');
+  });
+
+</script>
