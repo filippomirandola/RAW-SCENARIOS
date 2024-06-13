@@ -15,10 +15,10 @@ const { prev, next } = Astro.props;
     </a>
 
     <div class="text-rosso col-span-6 hidden sm:flex font-medium text-2xl lg:text-4xl uppercase justify-between -mt-1">
-        <a href={prev} class="it">precedente</a>
-        <a href={prev} class="en">previous</a>
-        <a href={next} class="it">prossimo</a>
-        <a href={next} class="en">next</a>
+        <a href={prev} class="it hover:underline">precedente</a>
+        <a href={prev} class="en hover:underline">previous</a>
+        <a href={next} class="it hover:underline">prossimo</a>
+        <a href={next} class="en hover:underline">next</a>
         <div class="flex">
             <p class="cursor-pointer it-button" data-lang="it">IT</p>
             <p>/</p>
@@ -31,8 +31,12 @@ const { prev, next } = Astro.props;
 
 </div>
 
-<div class="fixed flex sm:hidden w-full p-2 bottom-0">
-    <div class="text-rosso flex font-medium text-4xl uppercase">
+<div class="fixed flex sm:hidden w-full p-2 bottom-0 text-rosso font-medium text-xl uppercase">
+    <a href={prev} class="it hover:underline mr-6">precedente</a>
+    <a href={prev} class="en hover:underline mr-6">previous</a>
+    <a href={next} class="it hover:underline">prossimo</a>
+    <a href={next} class="en hover:underline">next</a>
+    <div class="flex ml-auto">
         <p class="cursor-pointer it-button" data-lang="it">IT</p>
         <p>/</p>
         <p class="cursor-pointer en-button" data-lang="en">EN</p>
