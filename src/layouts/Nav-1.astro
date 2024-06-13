@@ -1,24 +1,41 @@
 ---
 import ITEN from '../components/ITEN.astro';
+
+interface Props {
+  prev: string;
+  next: string;
+}
+
+const { prev, next } = Astro.props;
 ---
 
-<div class="fixed flex w-full p-2 sm:justify-between">
-    <a href="/" class="w-full">
-        <img src="/logo-1.svg" alt="Logo" class="w-full sm:h-14 sm:w-auto">
+<div class="fixed sm:grid sm:grid-cols-12 gap-2 w-full p-2">
+    <a href="/" class="w-full col-span-6">
+        <img src="/logo-1.svg" alt="Logo" class="w-full sm:h-10 lg:h-12 sm:w-auto">
     </a>
 
-    <div class="text-rosso hidden sm:flex font-medium text-4xl uppercase">
-        <h1 class="cursor-pointer it-button" data-lang="it">IT</h1>
-        <h1>/</h1>
-        <h1 class="cursor-pointer en-button" data-lang="en">EN</h1>
+    <div class="text-rosso col-span-6 hidden sm:flex font-medium text-2xl lg:text-4xl uppercase justify-between -mt-1">
+        <a href={prev} class="it">precedente</a>
+        <a href={prev} class="en">previous</a>
+        <a href={next} class="it">prossimo</a>
+        <a href={next} class="en">next</a>
+        <div class="flex">
+            <p class="cursor-pointer it-button" data-lang="it">IT</p>
+            <p>/</p>
+            <p class="cursor-pointer en-button" data-lang="en">EN</p>
+        </div>
+
     </div>
+
+
+
 </div>
 
 <div class="fixed flex sm:hidden w-full p-2 bottom-0">
     <div class="text-rosso flex font-medium text-4xl uppercase">
-        <h1 class="cursor-pointer it-button" data-lang="it">IT</h1>
-        <h1>/</h1>
-        <h1 class="cursor-pointer en-button" data-lang="en">EN</h1>
+        <p class="cursor-pointer it-button" data-lang="it">IT</p>
+        <p>/</p>
+        <p class="cursor-pointer en-button" data-lang="en">EN</p>
     </div>
 </div>
 
