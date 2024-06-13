@@ -1,26 +1,20 @@
 ---
-import ITEN from '../components/ITEN.astro';
+
 ---
 
-<div class="fixed flex w-full p-2 sm:justify-between">
-    <a href="/" class="w-full" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">
+<div class="fixed sm:flex w-full p-2 sm:justify-between z-50">
+    <a href="/" class="w-full cursor-pointer" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">
         <img src="/logo-1.svg" alt="Logo" class="w-full sm:h-14 sm:w-auto">
     </a>
 
-    <div class="hidden sm:flex font-medium text-4xl uppercase -mt-1" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">
+    <div class="flex font-medium text-4xl uppercase mt-1 sm:-mt-1 max-sm:ml-auto" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">
         <p class="cursor-pointer it-button" data-lang="it">IT</p>
         <p>/</p>
         <p class="cursor-pointer en-button" data-lang="en">EN</p>
     </div>
 </div>
 
-<div class="fixed flex sm:hidden w-full p-2 bottom-0">
-    <div class=" flex font-medium text-xl uppercase">
-        <p class="cursor-pointer it-button" data-lang="it">IT</p>
-        <p>/</p>
-        <p class="cursor-pointer en-button" data-lang="en">EN</p>
-    </div>
-</div>
+
 
 <script is:inline>
     document.addEventListener("DOMContentLoaded", function() {

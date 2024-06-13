@@ -1,153 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ITEN from '../components/ITEN.astro';
+import ImgBG from '../layouts/Img-BG.astro';
 ---
 
 <Layout title="RAW SCENARIOS" language='it'>
 
-  <!-- IMMAGINI SFONDO -->
-  <div class="fixed inset-0 w-full h-full -z-10 flex flex-wrap justify-center items-center overflow-hidden" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">
-    <img src="/assets/immagini/avocado.png" alt="avocado" class="threshold absolute">
-    <img src="/assets/immagini/caffe.png" alt="caffe" class="threshold absolute">
-    <img src="/assets/immagini/gambero.png" alt="gambero" class="threshold absolute">
-    <img src="/assets/immagini/patata.png" alt="patata" class="threshold absolute">
-    <img src="/assets/immagini/pomodoro.png" alt="pomodoro" class="threshold absolute">
-    <img src="/assets/immagini/riso.png" alt="riso" class="threshold absolute">
-    <img src="/assets/immagini/salmone.png" alt="salmone" class="threshold absolute">
-    <img src="/assets/immagini/soia.png" alt="soia" class="threshold absolute">
-    <img src="/assets/immagini/tonno.png" alt="tonno" class="threshold absolute">
-    <img src="/assets/immagini/zucchero.png" alt="zucchero" class="threshold absolute">
-    <img src="/assets/immagini/mais.png" alt="mais" class="threshold absolute">
-  </div>
-
+  <ImgBG></ImgBG>
+  
+  
   <!-- Logo -->
   <img src="/logo-2.svg" alt="Logo" class="px-2 pt-1" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">
-
+  
   <div>
     <a href="/Soy" class="text-3xl it">Soia</a>
     <a href="/Soy" class="text-3xl en">Soy</a>
-  </div>
-  
-
-  <!-- FOOTER -->
-  <div class="fixed bottom-0 p-2 grid grid-cols-4 sm:grid-cols-12 gap-4 sm:gap-2 text-lg sm:text-xl lg:text-3xl font-bold w-full ">
-    <div id="cookie-notice" class="col-span-4 sm:col-span-12 cookie  text-lg font-bold max-w-96 leading-tight relative mb-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1500" data-aos-easing="ease-in-out">
+    </div>
+    
+    
+    <!-- FOOTER -->
+    <div class="fixed bottom-0 p-2 grid grid-cols-4 sm:grid-cols-12 gap-4 sm:gap-2 text-lg sm:text-xl lg:text-3xl font-bold w-full ">
+      <div id="cookie-notice" class="col-span-4 sm:col-span-12 cookie  text-lg font-bold max-w-96 leading-tight relative mb-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1500" data-aos-easing="ease-in-out">
       <p class="cookie-close cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-50 transition-opacity">[<span class="rotate-45 scale-110">+</span>]</p>
       <div class="flex flex-col justify-between items-start mt-6">
         <div>
           <p class="it leading-tight">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
           <p class="en leading-tight">By continuing to browse this site, you automatically accept cookies.</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col col-span-3">
-      <p>Dotdotdot</p>
-      <a href="https://g.co/kgs/6SG4Nfu" target="_blank" class="hover:opacity-50 transition-opacity">Via Tertulliano 68, Milano</a>
-    </div>
-    <div class="flex flex-col col-span-3">
-      <p class="it">22 Giugno 2024</p>
+          </div>
+          </div>
+          </div>
+          <div class="flex flex-col col-span-3">
+            <p>Dotdotdot</p>
+            <a href="https://g.co/kgs/6SG4Nfu" target="_blank" class="hover:opacity-50 transition-opacity">Via Tertulliano 68, Milano</a>
+            </div>
+            <div class="flex flex-col col-span-3">
+              <p class="it">22 Giugno 2024</p>
       <p class="it">11h00 &#8212; 19h00</p>
       <p class="en">22 June 2024</p>
       <p class="en">11AM &#8212; 7PM</p>
-    </div>
-    <div class="flex flex-col col-span-3">
-      <p class="it uppercase">Ingresso Gratuito</p>
-      <p class="en uppercase">Free Entry</p>
-      <a href="https://www.instagram.com/rawscenarios?igsh=MThjemFlamU4OG1yeg==" target="_blank" class="hover:opacity-50 transition-opacity">@RAWSCENARIOS</a>
-    </div>
-    <div class="sm:ml-auto col-span-4 sm:col-span-3 max-sm:flex max-sm:flex-cols max-sm:justify-between">
-      <a href="/about"class="hover:opacity-50 transition-opacity">About</a>
-      <ITEN></ITEN>
-    </div>
+      </div>
+      <div class="flex flex-col col-span-3">
+        <p class="it uppercase">Ingresso Gratuito</p>
+        <p class="en uppercase">Free Entry</p>
+        <a href="https://www.instagram.com/rawscenarios?igsh=MThjemFlamU4OG1yeg==" target="_blank" class="hover:opacity-50 transition-opacity">@RAWSCENARIOS</a>
+        </div>
+        <div class="sm:ml-auto col-span-4 sm:col-span-3 max-sm:flex max-sm:flex-cols max-sm:justify-between">
+          <a href="/about"class="hover:opacity-50 transition-opacity">About</a>
+          <ITEN></ITEN>
+          </div>
   </div>
 </Layout>
-
-<style>
-  body {
-    margin: 0;
-    overflow: hidden;
-  }
-  .images-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    margin-top: calc(100vh/4);
-    z-index: -1; 
-  }
-  .threshold {
-    filter: brightness(110%) contrast(1000%);
-    opacity: 30%;
-    transition: filter var(--transition-duration, 0.1s) ease-out, transform 0.3s ease-in-out;
-    position: absolute;
-    top: var(--top);
-    left: var(--left);
-    width: var(--width);
-    height: auto;
-  }
-  img, a, h1 {
-    position: relative; 
-    z-index: 1;
-  }
-
-  /* ≥1024px */
-  @media (min-width: 1024px) {
-    .threshold:nth-child(1) { --top: 34%; --left: 23%; --width: 10vw; } /* avocado */
-    .threshold:nth-child(2) { --top: 68%; --left: 71%; --width: 6vw; } /* caffe */
-    .threshold:nth-child(3) { --top: 34%; --left: 45%; --width: 25vw; } /* gambero */
-    .threshold:nth-child(4) { --top: 60%; --left: 88%; --width: 10vw; } /* patata */
-    .threshold:nth-child(5) { --top: 65%; --left: 46%; --width: 11vw; } /* pomodoro */
-    .threshold:nth-child(6) { --top: 10%; --left: 50%; --width: 12vw; } /* riso */
-    .threshold:nth-child(7) { --top: 12%; --left: 1%; --width: 35vw; } /* salmone */
-    .threshold:nth-child(8) { --top: 63%; --left: 20%; --width: 16vw; } /* soia */
-    .threshold:nth-child(9) { --top: 33%; --left: 2%; --width: 8vw; } /* tonno */
-    .threshold:nth-child(10) { --top: 37%; --left: 79%; --width: 18vw; } /* zucchero */
-    .threshold:nth-child(11) { --top: 13%; --left: 74%; --width: 25vw; } /* mais */
-  }
-
-  /* width < 1024px */
-  @media (max-width: 1023px) {
-    .threshold:nth-child(1) { --top: 21%; --left: 30%; --width: 20vw; } /* avocado */
-    .threshold:nth-child(2) { --top:50%; --left: 75%; --width: 18vw; } /* caffe */
-    .threshold:nth-child(3) { --top: 48%; --left: 1%; --width: 58vw; } /* gambero */
-    .threshold:nth-child(4) { --top: 60%; --left: 60%; --width: 26vw; } /* patata */
-    .threshold:nth-child(5) { --top: 78%; --left: 70%; --width: 28vw; } /* pomodoro */
-    .threshold:nth-child(6) { --top: 15%; --left: 57%; --width: 32vw; } /* riso */
-    .threshold:nth-child(7) { --top: 10%; --left: 2%; --width: 40vw; } /* salmone */
-    .threshold:nth-child(8) { --top: 68%; --left: 5%; --width: 41vw; } /* soia */
-    .threshold:nth-child(9) { --top: 24%; --left: 5%; --width: 13vw; } /* tonno */
-    .threshold:nth-child(10) { --top: 28%; --left: 78%; --width: 42vw; } /* zucchero */
-    .threshold:nth-child(11) { --top: 112%; --left: 70%; --width: 62vw; } /* mais */
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
- 
-    const images = document.querySelectorAll('.threshold');
-
-    document.addEventListener('mousemove', (event) => {
-      images.forEach((img) => {
-        const imgElement = img as HTMLElement;
-        const rect = imgElement.getBoundingClientRect();
-        const imgCenterX = rect.left + rect.width / 2;
-        const imgCenterY = rect.top + rect.height / 2;
-
-        const distX = Math.abs(event.clientX - imgCenterX);
-        const distY = Math.abs(event.clientY - imgCenterY);
-        const maxDist = Math.sqrt(rect.width * rect.width + rect.height * rect.height) / 2;
-        const distance = Math.sqrt(distX * distX + distY * distY);
-
-        const threshold = Math.max(0, (1 - distance / maxDist) * 100);
-
-        imgElement.style.setProperty('--threshold', `${threshold}%`);
-        const brightness = 110 - (threshold * 0.4); // Decrease brightness from 110% to 70%
-        const contrast = 1000 + (threshold * 2); // Increase contrast from 200% to 400%
-        imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
-      });
-    });
-  });
-  
-</script>
-
-
-
