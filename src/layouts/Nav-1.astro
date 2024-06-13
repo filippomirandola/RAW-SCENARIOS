@@ -10,16 +10,16 @@ const { prev, next } = Astro.props;
 ---
 
 <div class="fixed sm:grid sm:grid-cols-12 gap-2 w-full p-2">
-    <a href="/" class="w-full col-span-6">
+    <a href="/" class="w-full col-span-6" data-aos="fade" data-aos-duration="300"data-aos-easing="ease-in-out">
         <img src="/logo-1.svg" alt="Logo" class="w-full sm:h-10 lg:h-12 sm:w-auto">
     </a>
 
     <div class="text-rosso col-span-6 hidden sm:flex font-medium text-2xl lg:text-4xl uppercase justify-between -mt-1">
-        <a href={prev} class="it hover:underline">precedente</a>
-        <a href={prev} class="en hover:underline">previous</a>
-        <a href={next} class="it hover:underline">prossimo</a>
-        <a href={next} class="en hover:underline">next</a>
-        <div class="flex">
+        <a href={prev} class="it hover:underline" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">precedente</a>
+        <a href={prev} class="en hover:underline" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">previous</a>
+        <a href={next} class="it hover:underline" data-aos="fade" data-aos-duration="300" data-aos-delay="200" data-aos-easing="ease-in-out">prossimo</a>
+        <a href={next} class="en hover:underline" data-aos="fade" data-aos-duration="300" data-aos-delay="200" data-aos-easing="ease-in-out">next</a>
+        <div class="flex" data-aos="fade" data-aos-duration="300" data-aos-delay="300" data-aos-easing="ease-in-out">
             <p class="cursor-pointer it-button" data-lang="it">IT</p>
             <p>/</p>
             <p class="cursor-pointer en-button" data-lang="en">EN</p>
