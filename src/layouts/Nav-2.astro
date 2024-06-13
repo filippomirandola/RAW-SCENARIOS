@@ -1,0 +1,82 @@
+---
+import ITEN from '../components/ITEN.astro';
+---
+
+<div class="fixed flex w-full p-2 sm:justify-between">
+    <a href="/" class="w-full">
+        <img src="/logo-1.svg" alt="Logo" class="w-full sm:h-14 sm:w-auto">
+    </a>
+
+    <div class="text-rosso hidden sm:flex font-medium text-4xl uppercase">
+        <h1 class="cursor-pointer it-button" data-lang="it">IT</h1>
+        <h1>/</h1>
+        <h1 class="cursor-pointer en-button" data-lang="en">EN</h1>
+    </div>
+</div>
+
+<div class="fixed flex sm:hidden w-full p-2 bottom-0">
+    <div class="text-rosso flex font-medium text-4xl uppercase">
+        <h1 class="cursor-pointer it-button" data-lang="it">IT</h1>
+        <h1>/</h1>
+        <h1 class="cursor-pointer en-button" data-lang="en">EN</h1>
+    </div>
+</div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", function() {
+        const itButtons = document.querySelectorAll(".it-button");
+        const enButtons = document.querySelectorAll(".en-button");
+    
+        itButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                toggleLanguage('it', 'en');
+            });
+        });
+    
+        enButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                toggleLanguage('en', 'it');
+            });
+        });
+    
+        function toggleLanguage(showClass, hideClass) {
+            const showElements = document.querySelectorAll(`.${showClass}`);
+            const hideElements = document.querySelectorAll(`.${hideClass}`);
+            
+            showElements.forEach(element => {
+                element.style.display = 'block';
+            });
+    
+            hideElements.forEach(element => {
+                element.style.display = 'none';
+            });
+    
+            itButtons.forEach(button => {
+                if (showClass === 'it') {
+                    button.style.opacity = '1';
+                } else {
+                    button.style.opacity = '0.5';
+                }
+            });
+    
+            enButtons.forEach(button => {
+                if (showClass === 'en') {
+                    button.style.opacity = '1';
+                } else {
+                    button.style.opacity = '0.5';
+                }
+            });
+        }
+    
+        toggleLanguage('it', 'en');
+    });
+</script>
+
+<style>
+    .content {
+        display: none;
+    }
+    .cursor-pointer {
+        cursor: pointer;
+    }
+</style>
