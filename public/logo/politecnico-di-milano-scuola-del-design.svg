@@ -13,7 +13,7 @@
 
       .cls-1, .cls-2, .cls-3 {
         fill: none;
-        stroke: #1d1d1b;
+        stroke: #E4221F;
       }
 
       .cls-2 {
@@ -21,7 +21,7 @@
       }
 
       .cls-4 {
-        fill: #1d1d1b;
+        fill: #E4221F;
         stroke-width: 0px;
       }
 
