@@ -1,0 +1,18 @@
+---
+
+interface Props {
+  it: string;
+  en: string;
+}
+
+const { it, en } = Astro.props;
+
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-12 w-full mt-48 text text-9xl font-regular uppercase ">
+    <div class="sm:col-span-3"></div>
+    <div class="sm:col-span-9">
+        <h1 class="it">{it}</h1>
+        <h1 class="en">{en}</h1>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+---
+
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+
+
+---
+
+
+<div class="grid grid-cols-1 sm:grid-cols-12 px-2 pb-2 w-full">
+    <div class="max-sm:hidden sm:col-span-3"></div>
+    <img src={src} alt={src} class="aspect-video bg-slate-200 sm:col-span-9">
+</div>
