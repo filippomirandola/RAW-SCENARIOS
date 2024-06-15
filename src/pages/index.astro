@@ -81,12 +81,15 @@ import ImgBG from '../layouts/Img-BG.astro';
       </div>
     </div>
 
-    <div id="cookie-notice" class="flex max-w-md cookie text-lg font-bold leading-tight relative mb-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1500" data-aos-easing="ease-in-out">
-      <p class="cookie-close cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-50 transition-opacity">[<span class="rotate-45 scale-110">+</span>]</p>
-      <div class="flex flex-col justify-between items-start mt-6">
-        <div>
-          <p class="it leading-tight">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
-          <p class="en leading-tight">By continuing to browse this site, you automatically accept cookies.</p>
+    <!-- Cookie -->
+    <div class="p-2 max-w-[50%] sm:max-w-md mb-32 sm:mb-24 lg:mb-28" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000" data-aos-easing="ease-in-out">
+      <div id="cookie-notice" class="flex cookie text-lg font-bold leading-tight relative" >
+        <p class="cookie-close cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-50 transition-opacity">[<span class="rotate-45 scale-110">+</span>]</p>
+        <div class="flex flex-col justify-between items-start mt-6">
+          <div>
+            <p class="it leading-tight">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
+            <p class="en leading-tight">By continuing to browse this site, you automatically accept cookies.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -180,6 +183,12 @@ import ImgBG from '../layouts/Img-BG.astro';
   
       toggleLanguage('it', 'en');
   });
+
+
+  document.querySelector('.cookie-close').addEventListener('click', function() {
+    document.querySelector('.cookie').classList.add('hidden');
+  });
+
   </script>
   
 
