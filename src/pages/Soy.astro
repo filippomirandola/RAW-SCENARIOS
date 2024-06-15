@@ -7,7 +7,8 @@ import ImgRight from "../components/ImgRight.astro"
 import ImgFull from "../components/ImgFull.astro"
 import ProjectText from "../components/Project-Text.astro"
 import Footer from "../components/Footer.astro";
-import Video from "../components/Video.astro"
+import VideoLeft from "../components/VideoLeft.astro"
+import VideoRight from "../components/VideoRight.astro"
 ---
 
 <Layout title="RAW SCENARIOS" language='it'>
@@ -66,13 +67,19 @@ import Video from "../components/Video.astro"
     <ImgFull
         src="/img/soy/soia-macchina-3.webp"
     />
-
-    <Video
+    
+    <VideoLeft
+    src="https://www.youtube.com/embed/1B28dg3r9N8?si=RM-sspaycPT8cwxU"
+    />
+    <VideoRight
     src="https://www.youtube.com/embed/1B28dg3r9N8?si=RM-sspaycPT8cwxU"
     />
 
-    <div class="flex gap-2 px-2 pb-2 w-full mb-48" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">
-        <div class="">
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 px-2 pb-2 w-full mb-16 sm:mb-32 lg:mb-48" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">
+        <div class="max-sm:hidden sm:col-span-3"></div>
+        <div class="sm:col-span-9">
             <p class="txt it uppercase">gruppo</p>
             <p class="txt en uppercase">group</p>
             <p class="txt">Marcello J. Biffi</p>
@@ -80,6 +87,8 @@ import Video from "../components/Video.astro"
             <p class="txt">Adele Mazzali</p>
             <p class="txt">Claudia Tranti</p>
         </div>
+
+    
     </div>
     
     <Footer/>
