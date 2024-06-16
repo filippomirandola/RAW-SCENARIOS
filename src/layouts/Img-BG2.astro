@@ -1,0 +1,109 @@
+---
+---
+
+<!-- IMMAGINI SFONDO -->
+<style>
+    .background-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .threshold {
+      filter: brightness(110%) contrast(3000%);
+      opacity: 20%;
+      transition: filter var(--transition-duration, 0.1s) ease-out, transform 0.3s ease-in-out;
+      position: absolute;
+      top: var(--top);
+      left: var(--left);
+      right: var(--right);
+      bottom: var(--bottom);
+      width: var(--width);
+      max-width: var(--maxwidth);
+      min-width: var(--minwidth);
+      height: auto;
+      pointer-events: none;
+    }
+    img, a, h1 {
+      position: relative;
+      z-index: 1;
+    }
+  
+    @media (min-width: 641px) {
+      .threshold:nth-child(1) { --top: 45vh; --right: 35vw; --width: 12vw; --maxwidth: 300px; --minwidth: 160px; } /* avocado */
+      .threshold:nth-child(2) { --top: 8vh; --left: 22vw; --width: 10vw; --maxwidth: 260px; --minwidth: 130px; } /* caffe */
+      .threshold:nth-child(3) { --top: 78vh; --right: 20vw; --width: 30vw; --maxwidth: 700px; --minwidth: 300px; } /* gambero */
+      .threshold:nth-child(4) { --top: 70vh; --left: 34vw; --width: 13vw; --maxwidth: 400px; --minwidth: 160px; } /* patata */
+      .threshold:nth-child(5) { --top: 50vh; --left: 26vw; --width: 14vw; --maxwidth: 280px; --minwidth: 170px; } /* pomodoro */
+      .threshold:nth-child(6) { --top: 60vh; --left: 11vw; --width: 16vw; --maxwidth: 400px; --minwidth: 100px; } /* riso */
+      .threshold:nth-child(7) { --top: 2vh; --right: 1vw; --width: 35vw; --maxwidth: 700px; --minwidth: 100px; } /* salmone */
+      .threshold:nth-child(8) { --top: 27vh; --left: 34vw; --width: 16vw; --maxwidth: 16vw; --minwidth: 100px; } /* soia */
+      .threshold:nth-child(9) { --top: 24vh; --left: 2vw; --width: 10vw; --maxwidth: 250px; --minwidth: 60px; } /* tonno */
+      .threshold:nth-child(10) { --top: 37vh; --left: 64vw; --width: 18vw; --maxwidth: 18vw; --minwidth: 100px; } /* zucchero */
+      .threshold:nth-child(11) { --top: 63vh; --right: 3vw; --width: 25vw; --maxwidth: 25vw; --minwidth: 100px; } /* mais */
+    }
+  
+    @media (max-width: 640px) {
+      .threshold:nth-child(1) { --top: 21%; --left: 30%; --width: 20vw; --maxwidth: 20vw; --minwidth: 100px; } /* avocado */
+      .threshold:nth-child(2) { --top: 50%; --left: 75%; --width: 18vw; --maxwidth: 18vw; --minwidth: 100px; } /* caffe */
+      .threshold:nth-child(3) { --top: 48%; --left: 1%; --width: 58vw; --maxwidth: 58vw; --minwidth: 100px; } /* gambero */
+      .threshold:nth-child(4) { --top: 60%; --left: 60%; --width: 26vw; --maxwidth: 26vw; --minwidth: 100px; } /* patata */
+      .threshold:nth-child(5) { --top: 78%; --left: 70%; --width: 28vw; --maxwidth: 28vw; --minwidth: 100px; } /* pomodoro */
+      .threshold:nth-child(6) { --top: 15%; --left: 57%; --width: 32vw; --maxwidth: 32vw; --minwidth: 100px; } /* riso */
+      .threshold:nth-child(7) { --top: 10%; --left: 2%; --width: 40vw; --maxwidth: 40vw; --minwidth: 100px; } /* salmone */
+      .threshold:nth-child(8) { --top: 68%; --left: 5%; --width: 41vw; --maxwidth: 41vw; --minwidth: 100px; } /* soia */
+      .threshold:nth-child(9) { --top: 24%; --left: 5%; --width: 13vw; --maxwidth: 13vw; --minwidth: 100px; } /* tonno */
+      .threshold:nth-child(10) { --top: 28%; --left: 78%; --width: 42vw; --maxwidth: 42vw; --minwidth: 100px; } /* zucchero */
+      .threshold:nth-child(11) { --top: 112%; --left: 70%; --width: 62vw; --maxwidth: 62vw; --minwidth: 100px; } /* mais */
+    }
+  </style>
+  
+  <div class="background-container" data-aos="fade" data-aos-duration="750" data-aos-easing="ease-in-out">
+    <img src="/assets/immagini/avocado.png" alt="avocado" class="threshold">
+    <img src="/assets/immagini/caffe.png" alt="caffe" class="threshold">
+    <img src="/assets/immagini/gambero.png" alt="gambero" class="threshold">
+    <img src="/assets/immagini/patata.png" alt="patata" class="threshold">
+    <img src="/assets/immagini/pomodoro.png" alt="pomodoro" class="threshold">
+    <img src="/assets/immagini/riso.png" alt="riso" class="threshold">
+    <img src="/assets/immagini/salmone.png" alt="salmone" class="threshold">
+    <img src="/assets/immagini/soia.png" alt="soia" class="threshold">
+    <img src="/assets/immagini/tonno.png" alt="tonno" class="threshold">
+    <img src="/assets/immagini/zucchero.png" alt="zucchero" class="threshold">
+    <img src="/assets/immagini/mais.png" alt="mais" class="threshold">
+  </div>
+  
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const images = document.querySelectorAll('.threshold');
+
+        document.addEventListener('mousemove', (event) => {
+            images.forEach((img) => {
+            const imgElement = img;
+            const rect = imgElement.getBoundingClientRect();
+            const imgCenterX = rect.left + rect.width / 2;
+            const imgCenterY = rect.top + rect.height / 2;
+
+            const distX = Math.abs(event.clientX - imgCenterX);
+            const distY = Math.abs(event.clientY - imgCenterY);
+            const maxDist = Math.sqrt(rect.width * rect.width + rect.height * rect.height) / 2;
+            const distance = Math.sqrt(distX * distX + distY * distY);
+
+            const threshold = Math.max(0, (1 - distance / maxDist) * 100);
+
+            imgElement.style.setProperty('--threshold', `${threshold}%`);
+            const brightness = 110 - (threshold * 0.4); // Decrease brightness from 110% to 70%
+            const contrast = 3000 + (threshold * 2); // Increase contrast from 1000% to 1200%
+            const opacity = 0.2 + ((threshold / 100) * 0.2); // Calculate opacity from 0.4 to 1
+
+            imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
+            imgElement.style.opacity = opacity; // Set opacity based on threshold
+            });
+        });
+    });
+
+  </script>
+  

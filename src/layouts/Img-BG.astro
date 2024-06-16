@@ -15,7 +15,7 @@
   }
   .threshold {
     filter: brightness(110%) contrast(3000%);
-    opacity: 30%;
+    opacity: 20%;
     transition: filter var(--transition-duration, 0.1s) ease-out, transform 0.3s ease-in-out;
     position: absolute;
     top: var(--top);
@@ -77,28 +77,31 @@
 </div>
 
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('.threshold');
+    document.addEventListener('DOMContentLoaded', () => {
+        const images = document.querySelectorAll('.threshold');
 
-    document.addEventListener('mousemove', (event) => {
-      images.forEach((img) => {
-        const imgElement = img;
-        const rect = imgElement.getBoundingClientRect();
-        const imgCenterX = rect.left + rect.width / 2;
-        const imgCenterY = rect.top + rect.height / 2;
+        document.addEventListener('mousemove', (event) => {
+            images.forEach((img) => {
+            const imgElement = img;
+            const rect = imgElement.getBoundingClientRect();
+            const imgCenterX = rect.left + rect.width / 2;
+            const imgCenterY = rect.top + rect.height / 2;
 
-        const distX = Math.abs(event.clientX - imgCenterX);
-        const distY = Math.abs(event.clientY - imgCenterY);
-        const maxDist = Math.sqrt(rect.width * rect.width + rect.height * rect.height) / 2;
-        const distance = Math.sqrt(distX * distX + distY * distY);
+            const distX = Math.abs(event.clientX - imgCenterX);
+            const distY = Math.abs(event.clientY - imgCenterY);
+            const maxDist = Math.sqrt(rect.width * rect.width + rect.height * rect.height) / 2;
+            const distance = Math.sqrt(distX * distX + distY * distY);
 
-        const threshold = Math.max(0, (1 - distance / maxDist) * 100);
+            const threshold = Math.max(0, (1 - distance / maxDist) * 100);
 
-        imgElement.style.setProperty('--threshold', `${threshold}%`);
-        const brightness = 110 - (threshold * 0.4); // Decrease brightness from 110% to 70%
-        const contrast = 3000 + (threshold * 2); // Increase contrast from 1000% to 1200%
-        imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
-      });
+            imgElement.style.setProperty('--threshold', `${threshold}%`);
+            const brightness = 110 - (threshold * 0.4); // Decrease brightness from 110% to 70%
+            const contrast = 3000 + (threshold * 2); // Increase contrast from 1000% to 1200%
+            const opacity = 0.2 + ((threshold / 100) * 0.2); // Calculate opacity from 0.4 to 1
+
+            imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
+            imgElement.style.opacity = opacity; // Set opacity based on threshold
+            });
+        });
     });
-  });
 </script>
