@@ -82,9 +82,9 @@ import ImgBG from '../layouts/Img-BG.astro';
     </div>
 
     <!-- Cookie -->
-    <div class="fixed max-sm:hidden bottom-0 p-2 max-w-md mb-24 lg:mb-28 " data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000" data-aos-easing="ease-in-out">
-      <div id="cookie-notice-1" class="flex cookie-1 text-lg font-bold leading-snug relative" >
-        <p class="cookie-close-1 cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-50 transition-opacity">[<span class="rotate-45 scale-110">+</span>]</p>
+    <div class="fixed max-sm:hidden bottom-0 p-2 max-w-[55%] sm:max-w-md mb-24 lg:mb-28 " data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000" data-aos-easing="ease-in-out">
+      <div id="cookie-notice" class="flex cookie text-lg font-bold leading-snug relative" >
+        <p class="cookie-close cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-50 transition-opacity">[<span class="rotate-45 scale-110">+</span>]</p>
         <div class="flex flex-col justify-between items-start mt-6">
           <div>
             <p class="it leading-snug">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
@@ -116,22 +116,22 @@ import ImgBG from '../layouts/Img-BG.astro';
         <ITEN />
       </div>
     </div>
-
-    <!-- FOOTER MOBILE + COOKIE -->
-    <div class="sm:hidden flex flex-col p-2 font-bold w-full leading-none">
-      <!-- COOKIE -->
-      <div class="max-w-[55%] mb-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000" data-aos-easing="ease-in-out">
-        <div id="cookie-notice-2" class="flex cookie-2 font-bold text-base leading-tight relative" >
-          <p class="cookie-close-2 cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-50 transition-opacity">[<span class="rotate-45 scale-110">+</span>]</p>
-          <div class="flex flex-col justify-between items-start mt-6">
-            <div>
-              <p class="it leading-tight">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
-              <p class="en leading-tight">By continuing to browse this site, you automatically accept cookies.</p>
-            </div>
+    
+    <!-- COOKIE -->
+    <div class="sm:hidden flex flex-col p-2 font-bold w-full leading-none max-w-[55%] mb-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000" data-aos-easing="ease-in-out">
+      <div id="cookie-notice-2" class="flex cookie-2 font-bold text-base leading-tight relative" >
+        <p class="cookie-close-2 cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-50 transition-opacity">[<span class="rotate-45 scale-110">+</span>]</p>
+        <div class="flex flex-col justify-between items-start mt-6">
+          <div>
+            <p class="it leading-tight">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
+            <p class="en leading-tight">By continuing to browse this site, you automatically accept cookies.</p>
           </div>
         </div>
       </div>
-      <!-- FOOTER -->
+    </div>
+
+    <!-- FOOTER MOBILE-->
+    <div class="sm:hidden flex flex-col p-2 font-bold w-full leading-none">
       <div class="flex justify-between text-lg">
         <div class="flex flex-col ">
           <p class="it -mb-2">22 Giugno 2024</p>
@@ -199,12 +199,8 @@ import ImgBG from '../layouts/Img-BG.astro';
   });
 
 
-  document.querySelector('.cookie-close-1').addEventListener('click', function() {
-    document.querySelector('.cookie-1').classList.add('hidden');
-  });
-
-  document.querySelector('.cookie-close-2').addEventListener('click', function() {
-    document.querySelector('.cookie-2').classList.add('hidden');
+  document.querySelector('.cookie-close').addEventListener('click', function() {
+    document.querySelector('.cookie').classList.add('hidden');
   });
 
   </script>
