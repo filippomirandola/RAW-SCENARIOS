@@ -5,7 +5,7 @@ import ImgBG from '../layouts/Img-BG.astro';
 ---
 
 <Layout title="RAW SCENARIOS" language='it'>
-  <!-- <ImgBG /> -->
+  <ImgBG />
   
   <div class="flex flex-col sm:h-screen sm:fixed w-full">
     
@@ -13,7 +13,7 @@ import ImgBG from '../layouts/Img-BG.astro';
     <img src="/logo-2.svg" alt="Logo" class="px-2 pt-1 max-sm:fixed" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">
     
     <!-- PROGETTI-->
-    <div class="sm:flex-grow grid grid-rows-11 max-sm:gap-y-24 p-2 mt-48 sm:mt-12 mb-16 uppercase font-semibold text-3xl" data-aos="fade" data-aos-duration="400" data-aos-delay="200" data-aos-easing="ease-in-out">
+    <div class="sm:flex-grow grid grid-rows-11 max-sm:gap-y-24 p-2 mt-48 sm:mt-12 mb-20 uppercase font-semibold text-3xl" data-aos="fade" data-aos-duration="400" data-aos-delay="200" data-aos-easing="ease-in-out">
       <div class="w-full flex items-center justify-center sm:justify-end"  >
         <div class="hover:opacity-50 transition-opacity inline-block sm:mr-[14vw]">
           <a href="/Salmon" class="it">Salmone</a>
@@ -74,7 +74,7 @@ import ImgBG from '../layouts/Img-BG.astro';
         </div>
       </div>
       <div class="w-full flex items-center justify-center sm:justify-end">
-        <div class="hover:opacity-50 transition-opacity inline-block m:mr-[25vw]">
+        <div class="hover:opacity-50 transition-opacity inline-block sm:mr-[25vw]">
           <a href="/Shrimp" class="it">Gamberi</a>
           <a href="/Shrimp" class="en">Shrimp</a>
         </div>
@@ -82,13 +82,13 @@ import ImgBG from '../layouts/Img-BG.astro';
     </div>
 
     <!-- Cookie -->
-    <div class="sticky sm:fixed bottom-0 p-2 max-w-[55%] sm:max-w-md sm:mb-24 lg:mb-28 " data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000" data-aos-easing="ease-in-out">
-      <div id="cookie-notice" class="flex cookie text-base sm:text-lg font-bold leading-tight relative" >
+    <div class="sticky sm:fixed bottom-0 p-2 max-w-[55%] sm:max-w-sm sm:mb-24 lg:mb-28 " data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000" data-aos-easing="ease-in-out">
+      <div id="cookie-notice" class="flex cookie text-base sm:text-lg font-bold leading-none relative" >
         <p class="cookie-close cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-50 transition-opacity">[<span class="rotate-45 scale-110">+</span>]</p>
         <div class="flex flex-col justify-between items-start mt-6 sm:mt-7">
           <div>
-            <p class="it leading-tight">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
-            <p class="en leading-tight">By continuing to browse this site, you automatically accept cookies.</p>
+            <p class="it leading-none">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
+            <p class="en leading-none">By continuing to browse this site, you automatically accept cookies.</p>
           </div>
         </div>
       </div>
@@ -123,12 +123,12 @@ import ImgBG from '../layouts/Img-BG.astro';
     
     <!-- COOKIE -->
     <!-- <div class="sm:hidden flex flex-col p-2 font-bold w-full leading-none max-w-[55%] mb-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000" data-aos-easing="ease-in-out">
-      <div id="cookie-notice-2" class="flex cookie-2 font-bold text-base leading-tight relative" >
+      <div id="cookie-notice-2" class="flex cookie-2 font-bold text-base leading-none relative" >
         <p class="cookie-close-2 cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-50 transition-opacity">[<span class="rotate-45 scale-110">+</span>]</p>
         <div class="flex flex-col justify-between items-start mt-6">
           <div>
-            <p class="it leading-tight">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
-            <p class="en leading-tight">By continuing to browse this site, you automatically accept cookies.</p>
+            <p class="it leading-none">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
+            <p class="en leading-none">By continuing to browse this site, you automatically accept cookies.</p>
           </div>
         </div>
       </div>
