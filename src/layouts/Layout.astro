@@ -39,16 +39,18 @@ const { title, language } = Astro.props;
 
   }
 
-  :root[data-theme='light']{
-    --bg:#fff
+
+  :root {
+    --bg-light: #fff;
+    --bg-dark: #000;
+  }
+
+  :root[data-theme='light'] {
+    --bg: var(--bg-light);
   }
 
   :root[data-theme='dark'] {
-    --bg:#000
-  }
-
-  body{
-    background-color: var(--bg);
+    --bg: var(--bg-dark);
   }
 
   div p{
