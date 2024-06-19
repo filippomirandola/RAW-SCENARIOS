@@ -31,16 +31,35 @@ const { title, language } = Astro.props;
     
   </script>
   <script is:inline>
-    function applyTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
 
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    applyTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
+      function detectColorScheme() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          setTheme("dark");
+        } else {
+          setTheme("light");
+        }
+      }
 
-    darkModeMediaQuery.addEventListener('change', (event) => {
-      applyTheme(event.matches ? 'dark' : 'light');
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        if (currentTheme === "light") {
+          setTheme("dark");
+        } else {
+          setTheme("light");
+        }
+      }
+
+      detectColorScheme();
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        setTheme(e.matches ? "dark" : "light");
+      });
     });
+
   </script>
 </html>
 
