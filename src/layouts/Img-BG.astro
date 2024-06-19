@@ -19,6 +19,7 @@
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; 
+    -drag: none;
   }
 
   .threshold {
@@ -42,11 +43,12 @@
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
+    -drag: none;
   }
 
-  img, a, h1 {
+  img {
     position: relative;
-    z-index: 1;
+    z-index: -1;
   }
 
   img.threshold {
@@ -58,6 +60,7 @@
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
+    -drag: none;
   }
 
   .threshold:nth-child(1) { --top: 38vh; --right: 33.5vw; --maxwidth: 11.7vw; --minwidth: 140px; } /* avocado */
