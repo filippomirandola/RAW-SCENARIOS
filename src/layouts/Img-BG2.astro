@@ -3,49 +3,64 @@
 
 <!-- IMMAGINI SFONDO -->
 <style>
-    .background-container {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-      touch-action: none;
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-      -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-      user-select: none; 
-    }
-    .threshold {
-      filter: brightness(110%) contrast(3000%);
-      opacity: 20%;
-      transition: filter var(--transition-duration, 0.1s) ease-out, transform 0.3s ease-in-out;
-      position: absolute;
-      top: var(--top);
-      left: var(--left);
-      right: var(--right);
-      bottom: var(--bottom);
-      width: var(--width);
-      max-width: var(--maxwidth);
-      min-width: var(--minwidth);
-      height: auto;
-      pointer-events: none;
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-      -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-      user-select: none; 
-    }
-    img, a, h1 {
-      position: relative;
-      z-index: 1;
-    }
-  
+  .background-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    touch-action: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; 
+  }
+
+  .threshold {
+    filter: brightness(110%) contrast(3000%);
+    opacity: 20%;
+    transition: filter var(--transition-duration, 0.1s) ease-out, transform 0.3s ease-in-out;
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    right: var(--right);
+    bottom: var(--bottom);
+    width: var(--width);
+    max-width: var(--maxwidth);
+    min-width: var(--minwidth);
+    height: auto;
+    pointer-events: none;
+    touch-action: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  }
+
+  img, a, h1 {
+    position: relative;
+    z-index: 1;
+  }
+
+  img.threshold {
+    pointer-events: none;
+    touch-action: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  }
+
+
     @media (min-width: 1024px) {
     .threshold:nth-child(1) { --top: 35vh; --right: 33.5vw; --maxwidth: 11.7vw; --minwidth: 140px; } /* avocado */
     .threshold:nth-child(2) { --top: 8vh; --left: 19vw; --maxwidth: 8.5vw; --minwidth: 110px; } /* caffe */

@@ -3,7 +3,7 @@
 
 <!-- IMMAGINI SFONDO -->
 <style>
-  .background-container {
+.background-container {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -20,6 +20,7 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; 
   }
+
   .threshold {
     filter: brightness(110%) contrast(3000%);
     opacity: 20%;
@@ -34,16 +35,29 @@
     min-width: var(--minwidth);
     height: auto;
     pointer-events: none;
+    touch-action: none;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; 
+    user-select: none;
   }
+
   img, a, h1 {
     position: relative;
     z-index: 1;
+  }
+
+  img.threshold {
+    pointer-events: none;
+    touch-action: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
   }
 
   .threshold:nth-child(1) { --top: 38vh; --right: 33.5vw; --maxwidth: 11.7vw; --minwidth: 140px; } /* avocado */
