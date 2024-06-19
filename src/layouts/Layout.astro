@@ -80,6 +80,14 @@ const { title, language } = Astro.props;
 </style>
 
 <script is:inline>
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
 
+  const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  applyTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
 
+  darkModeMediaQuery.addEventListener('change', (event) => {
+    applyTheme(event.matches ? 'dark' : 'light');
+  });
 </script>
