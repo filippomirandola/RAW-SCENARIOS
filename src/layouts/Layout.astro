@@ -30,37 +30,7 @@ const { title, language } = Astro.props;
     AOS.init();
     
   </script>
-  <!-- <script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-      function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-      }
 
-      function detectColorScheme() {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          setTheme("dark");
-        } else {
-          setTheme("light");
-        }
-      }
-
-      function toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        if (currentTheme === "light") {
-          setTheme("dark");
-        } else {
-          setTheme("light");
-        }
-      }
-
-      detectColorScheme();
-
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        setTheme(e.matches ? "dark" : "light");
-      });
-    });
-
-  </script> -->
 </html>
 
 <style is:global>
@@ -86,11 +56,11 @@ const { title, language } = Astro.props;
   }
 
   @media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--bg-dark);
+    body {
+      background-color: var(--bg-dark);
+    }
   }
-}
-  /* Style rules for light mode */
+  
   @media (prefers-color-scheme: light) {
     body {
       background-color: var(--bg-light);
