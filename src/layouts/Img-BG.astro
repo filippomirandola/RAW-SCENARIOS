@@ -123,31 +123,48 @@
 </div>
 
 <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-        const images = document.querySelectorAll('.threshold');
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.threshold');
 
-        document.addEventListener('mousemove', (event) => {
-            images.forEach((img) => {
-            const imgElement = img;
-            const rect = imgElement.getBoundingClientRect();
-            const imgCenterX = rect.left + rect.width / 2;
-            const imgCenterY = rect.top + rect.height / 2;
+    const handleMouseMove = (event) => {
+      images.forEach((img) => {
+        const imgElement = img;
+        const rect = imgElement.getBoundingClientRect();
+        const imgCenterX = rect.left + rect.width / 2;
+        const imgCenterY = rect.top + rect.height / 2;
 
-            const distX = Math.abs(event.clientX - imgCenterX);
-            const distY = Math.abs(event.clientY - imgCenterY);
-            const maxDist = Math.sqrt(rect.width * rect.width + rect.height * rect.height) / 2;
-            const distance = Math.sqrt(distX * distX + distY * distY);
+        const distX = Math.abs(event.clientX - imgCenterX);
+        const distY = Math.abs(event.clientY - imgCenterY);
+        const maxDist = Math.sqrt(rect.width * rect.width + rect.height * rect.height) / 2;
+        const distance = Math.sqrt(distX * distX + distY * distY);
 
-            const threshold = Math.max(0, (1 - distance / maxDist) * 100);
+        const threshold = Math.max(0, (1 - distance / maxDist) * 100);
 
-            imgElement.style.setProperty('--threshold', `${threshold}%`);
-            const brightness = 110 - (threshold * 0.4);
-            const contrast = 3000 + (threshold * 2); 
-            const opacity = 0.2 + ((threshold / 100) * 0.2); 
+        imgElement.style.setProperty('--threshold', `${threshold}%`);
+        const brightness = 110 - (threshold * 0.4);
+        const contrast = 3000 + (threshold * 2);
+        const opacity = 0.2 + ((threshold / 100) * 0.2);
 
-            imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
-            imgElement.style.opacity = opacity;
-            });
-        });
-    });
+        imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
+        imgElement.style.opacity = opacity;
+      });
+    };
+
+    const mediaQuery = window.matchMedia('(max-width: 640px)');
+
+    const checkMediaQuery = (e) => {
+      if (e.matches) {
+        document.addEventListener('mousemove', handleMouseMove);
+      } else {
+        document.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
+
+    // Initial check
+    checkMediaQuery(mediaQuery);
+
+    // Listen for changes
+    mediaQuery.addListener(checkMediaQuery);
+  });
 </script>
+
