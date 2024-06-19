@@ -30,7 +30,7 @@ const { title, language } = Astro.props;
     AOS.init();
     
   </script>
-  <script is:inline>
+  <!-- <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
       function setTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
@@ -60,7 +60,7 @@ const { title, language } = Astro.props;
       });
     });
 
-  </script>
+  </script> -->
 </html>
 
 <style is:global>
@@ -74,7 +74,7 @@ const { title, language } = Astro.props;
 
   :root {
     --bg-light: #fff;
-    --bg-dark: #080808;
+    --bg-dark: #0d0d0d;
   }
 
   :root[data-theme='light'] {
@@ -83,6 +83,18 @@ const { title, language } = Astro.props;
 
   :root[data-theme='dark'] {
     --bg: var(--bg-dark);
+  }
+
+  @media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-dark);
+  }
+}
+  /* Style rules for light mode */
+  @media (prefers-color-scheme: light) {
+    body {
+      background-color: var(--bg-light);
+    }
   }
 
   div p{
