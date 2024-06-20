@@ -7,16 +7,16 @@ interface Props {
 
 const { prev, next } = Astro.props;
 ---
-
+<!-- NAV 1 -->
 <div class="fixed top-0 sm:grid sm:grid-cols-12 gap-2 w-full p-2 z-50 h-12">
     <a href="/" class="sm:hidden" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">
         <img src="/logo-1.svg" alt="Logo" class="w-full sm:w-auto">
     </a>
-    <div class="col-span-6 -mt-1 max-sm:hidden ">
+    <div class="col-span-6 -mt-[6px] max-sm:hidden ">
         <a href="/" class="uppercase font-medium text-2xl lg:text-4xl " data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">rawscenarios</a>
     </div>
 
-    <div class="col-span-6 hidden sm:flex font-medium text-2xl lg:text-4xl uppercase justify-between -mt-1">
+    <div class="col-span-6 hidden sm:flex font-medium text-2xl lg:text-4xl uppercase justify-between -mt-[6px]">
         <a href={prev} class="it" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">precedente</a>
         <a href={prev} class="en" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">previous</a>
         <a href={next} class="it" data-aos="fade" data-aos-duration="300" data-aos-delay="200" data-aos-easing="ease-in-out">successivo</a>
@@ -28,6 +28,51 @@ const { prev, next } = Astro.props;
         </div>
     </div>
 </div>
+
+<!-- NAV TEST 2 -->
+<!-- <div class="fixed top-0 grid grid-cols-1 sm:grid-cols-4 gap-6 w-full p-2 z-50 h-12 -mt-1 font-medium text-2xl lg:text-4xl ">
+    <a href="/" class="sm:hidden" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">
+        <img src="/logo-1.svg" alt="Logo" class="w-full sm:w-auto">
+    </a>
+    <div class="max-sm:hidden ">
+        <a href="/" class="uppercase" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">rawscenarios</a>
+    </div>
+
+    <div class="hidden sm:flex uppercase justify-end">
+        <a href={prev} class="it" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">precedente</a>
+        <a href={prev} class="en" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">previous</a>
+    </div>
+    <div class="hidden sm:flex uppercase ">
+        <a href={next} class="it" data-aos="fade" data-aos-duration="300" data-aos-delay="200" data-aos-easing="ease-in-out">successivo</a>
+        <a href={next} class="en" data-aos="fade" data-aos-duration="300" data-aos-delay="200" data-aos-easing="ease-in-out">next</a>
+    </div>
+    <div class="hidden sm:flex justify-end" data-aos="fade" data-aos-duration="300" data-aos-delay="300" data-aos-easing="ease-in-out">
+        <p class="cursor-pointer it-button" data-lang="it">IT</p>
+        <p>/</p>
+        <p class="cursor-pointer en-button" data-lang="en">EN</p>
+    </div>
+</div> -->
+
+<!-- NAV TEST 3 -->
+<!-- <div class="fixed top-0 grid grid-cols-1 sm:grid-cols-12 gap-2 w-full p-2 z-50 -mt-1 font-medium text-lg lg:text-2xl ">
+    <a href="/" class="col-span-6" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">
+        <img src="/logo-1.svg" alt="Logo" class="w-full sm:w-auto sm:h-12 lg:h-16">
+    </a>
+
+    <div class="hidden sm:flex justify-end uppercase col-span-2 -mt-1">
+        <a href={prev} class="it" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">precedente</a>
+        <a href={prev} class="en" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">previous</a>
+    </div>
+    <div class="hidden sm:flex justify-end uppercase col-span-2 -mt-1">
+        <a href={next} class="it" data-aos="fade" data-aos-duration="300" data-aos-delay="200" data-aos-easing="ease-in-out">successivo</a>
+        <a href={next} class="en" data-aos="fade" data-aos-duration="300" data-aos-delay="200" data-aos-easing="ease-in-out">next</a>
+    </div>
+    <div class="hidden sm:flex justify-end col-span-2 -mt-1" data-aos="fade" data-aos-duration="300" data-aos-delay="300" data-aos-easing="ease-in-out">
+        <p class="cursor-pointer it-button" data-lang="it">IT</p>
+        <p>/</p>
+        <p class="cursor-pointer en-button" data-lang="en">EN</p>
+    </div>
+</div> -->
 
 <div class="fixed flex sm:hidden w-full p-2 bottom-1 font-medium text-xl uppercase z-50 items-baseline">
     <a href={prev} class="it mr-6">precedente</a>
