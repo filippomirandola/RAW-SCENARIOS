@@ -115,9 +115,11 @@
   <img src="/assets/immagini/zucchero.png" draggable="false" alt="zucchero" class="threshold">
   <img src="/assets/immagini/mais.png" draggable="false" alt="mais" class="threshold">
 </div>
+
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
       const images = document.querySelectorAll('.threshold');
+     
       const handleMouseMove = (event) => {
           images.forEach((img) => {
               const imgElement = img;
@@ -137,6 +139,7 @@
               imgElement.style.opacity = opacity;
           });
       };
+
       const handleResize = () => {
           if (window.innerWidth >= 640) {
               document.addEventListener('mousemove', handleMouseMove);
@@ -144,6 +147,7 @@
               document.removeEventListener('mousemove', handleMouseMove);
           }
       };
+      
       handleResize();
       window.addEventListener('resize', handleResize);
   });
