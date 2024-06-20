@@ -88,19 +88,19 @@
   }
 
   @media (max-width: 640px) {
-    .threshold:nth-child(1) { --top: 26vh; --left: 32vw; --right: auto; --maxwidth: 16.5vw; --minwidth: 90px; } /* avocado */
-    .threshold:nth-child(2) { --top: 6vh; --left: 4vw; --right: auto; --maxwidth: 10.5vw; --minwidth: 69px; } /* caffe */
-    .threshold:nth-child(3) { --top: 50vh; --left: 8vw; --right: auto; --maxwidth: 35vw; --minwidth: 180px; } /* gambero */
-    .threshold:nth-child(4) { --bottom: 4px; --right: 3vw; --left: auto; --maxwidth: 17vw; --minwidth: 110px; } /* patata */
-    .threshold:nth-child(5) { --top: 66vh; --left: 5vw; --right: auto; --maxwidth: 22vw; --minwidth: 130px; } /* pomodoro */
-    .threshold:nth-child(6) { --top: 80vh; --left: 33vw; --right: auto; --maxwidth: 21vw; --minwidth: 110px; } /* riso */
-    .threshold:nth-child(7) { --top: 7vh; --right: 1vw; --left: auto; --maxwidth: 40vw; --minwidth: 279px; } /* salmone */
-    .threshold:nth-child(8) { --top: 55vh; --right: 8vw; --left: auto; --maxwidth: 25vw; --minwidth: 140px; } /* soia */
-    .threshold:nth-child(9) { --top: 20vh; --left: 2vw; --right: auto; --maxwidth: 15vw; --minwidth: 80px; } /* tonno */
-    .threshold:nth-child(10) { --top: 21vh; --right: 4vw; --left: auto; --maxwidth: 27vw; --minwidth: 100px; } /* zucchero */
-    .threshold:nth-child(11) { --top: 40vh; --right: 2vw; --left: auto; --maxwidth: 40vw; --minwidth: 125px; } /* mais */
+      .threshold:nth-child(1) { --top: 26vh; --left: 32vw; --right: auto; --maxwidth: 16.5vw; --minwidth: 90px; } /* avocado */
+      .threshold:nth-child(2) { --top: 6vh; --left: 4vw; --right: auto; --maxwidth: 10.5vw; --minwidth: 69px; } /* caffe */
+      .threshold:nth-child(3) { --top: 54vh; --left: 20vw; --right: auto; --maxwidth: 35vw; --minwidth: 180px; } /* gambero */
+      .threshold:nth-child(4) { --bottom: 4px; --right: 3vw; --left: auto; --maxwidth: 17vw; --minwidth: 110px; } /* patata */
+      .threshold:nth-child(5) { --top: 67vh; --left: 5vw; --right: auto; --maxwidth: 22vw; --minwidth: 130px; } /* pomodoro */
+      .threshold:nth-child(6) { --top: 84vh; --left: 30vw; --right: auto; --maxwidth: 21vw; --minwidth: 110px; } /* riso */
+      .threshold:nth-child(7) { --top: 7vh; --right: 1vw; --left: auto; --maxwidth: 40vw; --minwidth: 279px; } /* salmone */
+      .threshold:nth-child(8) { --top: 61vh; --right: 8vw; --left: auto; --maxwidth: 25vw; --minwidth: 140px; } /* soia */
+      .threshold:nth-child(9) { --top: 20vh; --left: 2vw; --right: auto; --maxwidth: 15vw; --minwidth: 80px; } /* tonno */
+      .threshold:nth-child(10) { --top: 23vh; --right: 4vw; --left: auto; --maxwidth: 27vw; --minwidth: 100px; } /* zucchero */
+      .threshold:nth-child(11) { --top: 44vh; --right: 2vw; --left: auto; --maxwidth: 40vw; --minwidth: 125px; } /* mais */
   }
-  </style>
+</style>
   
   <div class="background-container" data-aos="fade" data-aos-duration="750" data-aos-easing="ease-in-out">
     <img src="/assets/immagini/avocado.png" draggable="false" alt="avocado" class="threshold">
@@ -119,31 +119,37 @@
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
         const images = document.querySelectorAll('.threshold');
-
-        document.addEventListener('mousemove', (event) => {
+       
+        const handleMouseMove = (event) => {
             images.forEach((img) => {
-            const imgElement = img;
-            const rect = imgElement.getBoundingClientRect();
-            const imgCenterX = rect.left + rect.width / 2;
-            const imgCenterY = rect.top + rect.height / 2;
-
-            const distX = Math.abs(event.clientX - imgCenterX);
-            const distY = Math.abs(event.clientY - imgCenterY);
-            const maxDist = Math.sqrt(rect.width * rect.width + rect.height * rect.height) / 2;
-            const distance = Math.sqrt(distX * distX + distY * distY);
-
-            const threshold = Math.max(0, (1 - distance / maxDist) * 100);
-
-            imgElement.style.setProperty('--threshold', `${threshold}%`);
-            const brightness = 110 - (threshold * 0.4); // Decrease brightness from 110% to 70%
-            const contrast = 3000 + (threshold * 2); // Increase contrast from 1000% to 1200%
-            const opacity = 0.1 + ((threshold / 100) * 0.2); // Calculate opacity from 0.4 to 1
-
-            imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
-            imgElement.style.opacity = opacity; // Set opacity based on threshold
+                const imgElement = img;
+                const rect = imgElement.getBoundingClientRect();
+                const imgCenterX = rect.left + rect.width / 2;
+                const imgCenterY = rect.top + rect.height / 2;
+                const distX = Math.abs(event.clientX - imgCenterX);
+                const distY = Math.abs(event.clientY - imgCenterY);
+                const maxDist = Math.sqrt(rect.width * rect.width + rect.height * rect.height) / 2;
+                const distance = Math.sqrt(distX * distX + distY * distY);
+                const threshold = Math.max(0, (1 - distance / maxDist) * 100);
+                imgElement.style.setProperty('--threshold', `${threshold}%`);
+                const brightness = 110 - (threshold * 0.4);
+                const contrast = 3000 + (threshold * 2);
+                const opacity = 0.1 + ((threshold / 100) * 0.2);
+                imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
+                imgElement.style.opacity = opacity;
             });
-        });
+        };
+  
+        const handleResize = () => {
+            if (window.innerWidth >= 640) {
+                document.addEventListener('mousemove', handleMouseMove);
+            } else {
+                document.removeEventListener('mousemove', handleMouseMove);
+            }
+        };
+        
+        handleResize();
+        window.addEventListener('resize', handleResize);
     });
-
   </script>
   
