@@ -23,7 +23,7 @@
 
   .threshold {
     filter: brightness(110%) contrast(3000%);
-    opacity: 20%;
+    opacity: 10%;
     transition: filter var(--transition-duration, 0.1s) ease-out, transform 0.3s ease-in-out;
     position: absolute;
     top: var(--top);
@@ -61,33 +61,44 @@
   }
 
 
-    @media (min-width: 1024px) {
-    .threshold:nth-child(1) { --top: 35vh; --right: 33.5vw; --left: auto; --maxwidth: 11.7vw; --minwidth: 140px; } /* avocado */
-    .threshold:nth-child(2) { --top: 8vh; --left: 19vw; --right: auto; --maxwidth: 8.5vw; --minwidth: 110px; } /* caffe */
-    .threshold:nth-child(3) { --top: 35vh; --left: 17.5vw; --right: auto; --maxwidth: 29vw; --minwidth: 300px; } /* gambero */
-    .threshold:nth-child(4) { --top: 60vh; --right: 6vw; --left: auto; --maxwidth: 10.5vw; --minwidth: 160px; } /* patata */
-    .threshold:nth-child(5) { --top: 65vh; --left: 18vw; --right: auto; --maxwidth: 13.7vw; --minwidth: 155px; } /* pomodoro */
-    .threshold:nth-child(6) { --top: 70vh; --left: 40vw; --right: auto; --maxwidth: 13.5vw; --minwidth: 100px; } /* riso */
-    .threshold:nth-child(7) { --top: 2vh; --right: 0.5vw; --left: auto; --maxwidth: 35vw; --minwidth: 35%; } /* salmone */
-    .threshold:nth-child(8) { --top: 62vh; --right: 22vw; --left: auto; --maxwidth: 17vw; --minwidth: 10%; } /* soia */
-    .threshold:nth-child(9) { --top: 14vh; --left: 1vw; --right: auto; --maxwidth: 12vw; --minwidth: 60px; } /* tonno */
-    .threshold:nth-child(10) { --top: 6vh; --left: 40vw; --right: auto; --maxwidth: 18vw; --minwidth: 100px; } /* zucchero */
-    .threshold:nth-child(11) { --top: 32vh; --right: 1vw; --left: auto; --maxwidth: 25vw; --minwidth: 100px; } /* mais */
-  }
-
+  .threshold:nth-child(1) { --top: 30vh; --right: 33.5vw; --left: auto; --maxwidth: 11.7vw; --minwidth: 140px; } /* avocado */
+  .threshold:nth-child(2) { --top: 11vh; --left: 19vw; --right: auto; --maxwidth: 8.5vw; --minwidth: 110px; } /* caffe */
+  .threshold:nth-child(3) { --top: 41vh; --left: 17.5vw; --right: auto; --maxwidth: 29vw; --minwidth: 300px; } /* gambero */
+  .threshold:nth-child(4) { --top: 68vh; --right: 6vw; --left: auto; --maxwidth: 10.5vw; --minwidth: 160px; } /* patata */
+  .threshold:nth-child(5) { --top: 65vh; --left: 18vw; --right: auto; --maxwidth: 13.7vw; --minwidth: 155px; } /* pomodoro */
+  .threshold:nth-child(6) { --top: 70vh; --left: 40vw; --right: auto; --maxwidth: 13.5vw; --minwidth: 100px; } /* riso */
+  .threshold:nth-child(7) { --top: 6vh; --right: 0.5vw; --left: auto; --maxwidth: 35vw; --minwidth: 35%; } /* salmone */
+  .threshold:nth-child(8) { --top: 62vh; --right: 22vw; --left: auto; --maxwidth: 17vw; --minwidth: 10%; } /* soia */
+  .threshold:nth-child(9) { --top: 21vh; --left: 1vw; --right: auto; --maxwidth: 12vw; --minwidth: 60px; } /* tonno */
+  .threshold:nth-child(10) { --top: 15vh; --left: 40vw; --right: auto; --maxwidth: 18vw; --minwidth: 100px; } /* zucchero */
+  .threshold:nth-child(11) { --top: 42vh; --right: 1vw; --left: auto; --maxwidth: 25vw; --minwidth: 100px; } /* mais */
 
   @media (max-width: 1023px) {
-    .threshold:nth-child(1) { --top: 26vh; --left: 32vw; --right: auto; --maxwidth: 16.5vw; --minwidth: 120px; } /* avocado */
-    .threshold:nth-child(2) { --top: 6vh; --left: 19.5vw; --right: auto; --maxwidth: 12vw; --minwidth: 100px; } /* caffe */
-    .threshold:nth-child(3) { --bottom: 33vh; --left: 8vw; --right: auto; --maxwidth: 35vw; --minwidth: 210px; } /* gambero */
-    .threshold:nth-child(4) { --bottom: 6vh; --right: 9vw; --left: auto; --maxwidth: 17vw; --minwidth: 140px; } /* patata */
-    .threshold:nth-child(5) { --bottom: 8vh; --left: 5vw; --right: auto; --maxwidth: 22vw; --minwidth: 160px; } /* pomodoro */
-    .threshold:nth-child(6) { --bottom: 12vh; --left: 44vw; --right: auto; --maxwidth: 21vw; --minwidth: 140px; } /* riso */
-    .threshold:nth-child(7) { --top: 3vh; --right: 1vw; --left: auto; --maxwidth: 43vw; --minwidth: 300px; } /* salmone */
-    .threshold:nth-child(8) { --bottom: 29vh; --right: 8vw; --left: auto; --maxwidth: 25vw; --minwidth: 160px; } /* soia */
-    .threshold:nth-child(9) { --top: 18vh; --left: 1vw; --right: auto; --maxwidth: 13.5vw; --minwidth: 100px; } /* tonno */
-    .threshold:nth-child(10) { --top: 20vh; --right: 4vw; --left: auto; --maxwidth: 22vw; --minwidth: 200px; } /* zucchero */
-    .threshold:nth-child(11) { --top: 42vh; --right: 2vw; --left: auto; --maxwidth: 34vw; --minwidth: 150px; } /* mais */
+    .threshold:nth-child(1) { --top: 30vh; --left: 46vw; --right: auto; --maxwidth: 16.5vw; --minwidth: 100px; } /* avocado */
+    .threshold:nth-child(2) { --top: 11vh; --left: 19.5vw; --right: auto; --maxwidth: 12vw; --minwidth: 100px; } /* caffe */
+    .threshold:nth-child(3) { --top: 49vh; --left: 15%; --right: auto; --maxwidth: 35vw; --minwidth: 100px; } /* gambero */
+    .threshold:nth-child(4) { --top: 72vh; --left: 79vw; --right: auto; --maxwidth: 17vw; --minwidth: 100px; } /* patata */
+    .threshold:nth-child(5) { --top: 65vh; --left: 15vw; --right: auto; --maxwidth: 22vw; --minwidth: 100px; } /* pomodoro */
+    .threshold:nth-child(6) { --top: 72vh; --left: 44vw; --right: auto; --maxwidth: 21vw; --minwidth: 100px; } /* riso */
+    .threshold:nth-child(7) {  --top: 6vh; --left: 56vw; --right: auto; --maxwidth: 43vw; --minwidth: 100px; } /* salmone */
+    .threshold:nth-child(8) { --top: 53vh; --left: 63vw; --right: auto; --maxwidth: 25vw; --minwidth: 100px; } /* soia */
+    .threshold:nth-child(9) { --top: 20vh; --left: 1vw; --right: auto; --maxwidth: 13.5vw; --minwidth: 100px; } /* tonno */
+    .threshold:nth-child(10) { --top: 15vh; --left: 36vw; --right: auto; --maxwidth: 22vw; --minwidth: 100px; } /* zucchero */
+    .threshold:nth-child(11) { --top: 38vh; --left: 66vw; --right: auto; --maxwidth: 34vw; --minwidth: 100px; } /* mais */
+  }
+
+  @media (max-width: 640px) {
+    .threshold:nth-child(1) { --top: 26vh; --left: 32vw; --right: auto; --maxwidth: 16.5vw; --minwidth: 90px; } /* avocado */
+    .threshold:nth-child(2) { --top: 6vh; --left: 4vw; --right: auto; --maxwidth: 10.5vw; --minwidth: 69px; } /* caffe */
+    .threshold:nth-child(3) { --top: 50vh; --left: 8vw; --right: auto; --maxwidth: 35vw; --minwidth: 180px; } /* gambero */
+    .threshold:nth-child(4) { --bottom: 4px; --right: 3vw; --left: auto; --maxwidth: 17vw; --minwidth: 110px; } /* patata */
+    .threshold:nth-child(5) { --top: 66vh; --left: 5vw; --right: auto; --maxwidth: 22vw; --minwidth: 130px; } /* pomodoro */
+    .threshold:nth-child(6) { --top: 80vh; --left: 33vw; --right: auto; --maxwidth: 21vw; --minwidth: 110px; } /* riso */
+    .threshold:nth-child(7) { --top: 7vh; --right: 1vw; --left: auto; --maxwidth: 40vw; --minwidth: 279px; } /* salmone */
+    .threshold:nth-child(8) { --top: 55vh; --right: 8vw; --left: auto; --maxwidth: 25vw; --minwidth: 140px; } /* soia */
+    .threshold:nth-child(9) { --top: 20vh; --left: 2vw; --right: auto; --maxwidth: 15vw; --minwidth: 80px; } /* tonno */
+    .threshold:nth-child(10) { --top: 21vh; --right: 4vw; --left: auto; --maxwidth: 27vw; --minwidth: 100px; } /* zucchero */
+    .threshold:nth-child(11) { --top: 40vh; --right: 2vw; --left: auto; --maxwidth: 40vw; --minwidth: 125px; } /* mais */
   }
   </style>
   
@@ -126,7 +137,7 @@
             imgElement.style.setProperty('--threshold', `${threshold}%`);
             const brightness = 110 - (threshold * 0.4); // Decrease brightness from 110% to 70%
             const contrast = 3000 + (threshold * 2); // Increase contrast from 1000% to 1200%
-            const opacity = 0.2 + ((threshold / 100) * 0.2); // Calculate opacity from 0.4 to 1
+            const opacity = 0.1 + ((threshold / 100) * 0.2); // Calculate opacity from 0.4 to 1
 
             imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
             imgElement.style.opacity = opacity; // Set opacity based on threshold
