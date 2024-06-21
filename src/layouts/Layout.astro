@@ -17,7 +17,15 @@ const { title, language } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://use.typekit.net/mqi7xvb.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Google tag (gtag.js) -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-NQ54V0PTYZ"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-NQ54V0PTYZ');
+  </script>
 
     <title>{title}</title>
   </head>
