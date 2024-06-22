@@ -1,7 +1,5 @@
 ---
 ---
-
-<!-- IMMAGINI SFONDO -->
 <style>
   .background-container {
     position: fixed;
@@ -44,6 +42,17 @@
     user-select: none;
   }
 
+  .background-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: -2;
+}
+
   img {
     position: relative;
     z-index: -1;
@@ -59,7 +68,6 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
   }
-
 
   .threshold:nth-child(1) { --top: 33vh; --right: 33vw; --left: auto; --maxwidth: 11.7vw; --minwidth: 140px; } /* avocado */
   .threshold:nth-child(2) { --top: 10vh; --left: 21vw; --right: auto; --maxwidth: 8.5vw; --minwidth: 110px; } /* caffe */
@@ -88,68 +96,85 @@
   }
 
   @media (max-width: 640px) {
-      .threshold:nth-child(1) { --top: 26vh; --left: 32vw; --right: auto; --maxwidth: 16.5vw; --minwidth: 90px; } /* avocado */
+      .threshold:nth-child(1) { --top: 26vh; --left: 34vw; --right: auto; --maxwidth: 16.5vw; --minwidth: 90px; } /* avocado */
       .threshold:nth-child(2) { --top: 6vh; --left: 4vw; --right: auto; --maxwidth: 10.5vw; --minwidth: 69px; } /* caffe */
-      .threshold:nth-child(3) { --top: 54vh; --left: 20vw; --right: auto; --maxwidth: 35vw; --minwidth: 180px; } /* gambero */
-      .threshold:nth-child(4) { --bottom: 4px; --right: 3vw; --left: auto; --maxwidth: 17vw; --minwidth: 110px; } /* patata */
+      .threshold:nth-child(3) { --top: 54vh; --left: 20vw; --right: auto; --maxwidth: 36vw; --minwidth: 190px; } /* gambero */
+      .threshold:nth-child(4) { --top: 78vh; --right: 3vw; --left: auto; --maxwidth: 17vw; --minwidth: 110px; } /* patata */
       .threshold:nth-child(5) { --top: 67vh; --left: 5vw; --right: auto; --maxwidth: 22vw; --minwidth: 130px; } /* pomodoro */
       .threshold:nth-child(6) { --top: 84vh; --left: 30vw; --right: auto; --maxwidth: 21vw; --minwidth: 110px; } /* riso */
       .threshold:nth-child(7) { --top: 7vh; --right: 1vw; --left: auto; --maxwidth: 40vw; --minwidth: 279px; } /* salmone */
-      .threshold:nth-child(8) { --top: 61vh; --right: 8vw; --left: auto; --maxwidth: 25vw; --minwidth: 140px; } /* soia */
+      .threshold:nth-child(8) { --top: 62vh; --right: 8vw; --left: auto; --maxwidth: 25vw; --minwidth: 140px; } /* soia */
       .threshold:nth-child(9) { --top: 20vh; --left: 2vw; --right: auto; --maxwidth: 15vw; --minwidth: 80px; } /* tonno */
       .threshold:nth-child(10) { --top: 23vh; --right: 4vw; --left: auto; --maxwidth: 27vw; --minwidth: 100px; } /* zucchero */
-      .threshold:nth-child(11) { --top: 44vh; --right: 2vw; --left: auto; --maxwidth: 40vw; --minwidth: 125px; } /* mais */
+      .threshold:nth-child(11) { --top: 44vh; --right: 2vw; --left: auto; --maxwidth: 42vw; --minwidth: 125px; } /* mais */
+  }
+
+  .video {
+    position: fixed;
+    filter: contrast(1000%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    touch-action: none;
+    mix-blend-mode: screen; /* Apply blend mode here */
+    
   }
 </style>
-  
-  <div class="background-container" data-aos="fade" data-aos-duration="750" data-aos-easing="ease-in-out">
-    <img src="/assets/immagini/avocado.png" draggable="false" alt="avocado" class="threshold">
-    <img src="/assets/immagini/caffe.png" draggable="false" alt="caffe" class="threshold">
-    <img src="/assets/immagini/gambero.png" draggable="false" alt="gambero" class="threshold">
-    <img src="/assets/immagini/patata.png" draggable="false" alt="patata" class="threshold">
-    <img src="/assets/immagini/pomodoro.png" draggable="false" alt="pomodoro" class="threshold">
-    <img src="/assets/immagini/riso.png" draggable="false" alt="riso" class="threshold">
-    <img src="/assets/immagini/salmone.png" draggable="false" alt="salmone" class="threshold">
-    <img src="/assets/immagini/soia.png" draggable="false" alt="soia" class="threshold">
-    <img src="/assets/immagini/tonno.png" draggable="false" alt="tonno" class="threshold">
-    <img src="/assets/immagini/zucchero.png" draggable="false" alt="zucchero" class="threshold">
-    <img src="/assets/immagini/mais.png" draggable="false" alt="mais" class="threshold">
-  </div>
-  
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-        const images = document.querySelectorAll('.threshold');
-       
-        const handleMouseMove = (event) => {
-            images.forEach((img) => {
-                const imgElement = img;
-                const rect = imgElement.getBoundingClientRect();
-                const imgCenterX = rect.left + rect.width / 2;
-                const imgCenterY = rect.top + rect.height / 2;
-                const distX = Math.abs(event.clientX - imgCenterX);
-                const distY = Math.abs(event.clientY - imgCenterY);
-                const maxDist = Math.sqrt(rect.width * rect.width + rect.height * rect.height) / 2;
-                const distance = Math.sqrt(distX * distX + distY * distY);
-                const threshold = Math.max(0, (1 - distance / maxDist) * 100);
-                imgElement.style.setProperty('--threshold', `${threshold}%`);
-                const brightness = 110 - (threshold * 0.4);
-                const contrast = 3000 + (threshold * 2);
-                const opacity = 0.1 + ((threshold / 100) * 0.2);
-                imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
-                imgElement.style.opacity = opacity;
-            });
-        };
-  
-        const handleResize = () => {
-            if (window.innerWidth >= 640) {
-                document.addEventListener('mousemove', handleMouseMove);
-            } else {
-                document.removeEventListener('mousemove', handleMouseMove);
-            }
-        };
-        
-        handleResize();
-        window.addEventListener('resize', handleResize);
-    });
-  </script>
-  
+
+<div class="background-container" data-aos="fade" data-aos-duration="750" data-aos-easing="ease-in-out">
+  <img src="/assets/immagini/avocado.png" draggable="false" alt="avocado" class="threshold">
+  <img src="/assets/immagini/caffe.png" draggable="false" alt="caffe" class="threshold">
+  <img src="/assets/immagini/gambero.png" draggable="false" alt="gambero" class="threshold">
+  <img src="/assets/immagini/patata.png" draggable="false" alt="patata" class="threshold">
+  <img src="/assets/immagini/pomodoro.png" draggable="false" alt="pomodoro" class="threshold">
+  <img src="/assets/immagini/riso.png" draggable="false" alt="riso" class="threshold">
+  <img src="/assets/immagini/salmone.png" draggable="false" alt="salmone" class="threshold">
+  <img src="/assets/immagini/soia.png" draggable="false" alt="soia" class="threshold">
+  <img src="/assets/immagini/tonno.png" draggable="false" alt="tonno" class="threshold">
+  <img src="/assets/immagini/zucchero.png" draggable="false" alt="zucchero" class="threshold">
+  <img src="/assets/immagini/mais.png" draggable="false" alt="mais" class="threshold">
+  <video class="video" autoplay muted loop>
+    <source src="/assets/noise.mp4" type="video/mp4">
+  </video>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.threshold');
+     
+      const handleMouseMove = (event) => {
+          images.forEach((img) => {
+              const imgElement = img;
+              const rect = imgElement.getBoundingClientRect();
+              const imgCenterX = rect.left + rect.width / 2;
+              const imgCenterY = rect.top + rect.height / 2;
+              const distX = Math.abs(event.clientX - imgCenterX);
+              const distY = Math.abs(event.clientY - imgCenterY);
+              const maxDist = Math.sqrt(rect.width * rect.width + rect.height * rect.height) / 2;
+              const distance = Math.sqrt(distX * distX + distY * distY);
+              const threshold = Math.max(0, (1 - distance / maxDist) * 100);
+              imgElement.style.setProperty('--threshold', `${threshold}%`);
+              const brightness = 110 - (threshold * 0.4);
+              const contrast = 3000 + (threshold * 2);
+              const opacity = 0.1 + ((threshold / 100) * 0.2);
+              imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%)`;
+              imgElement.style.opacity = opacity;
+          });
+      };
+
+      const handleResize = () => {
+          if (window.innerWidth >= 640) {
+              document.addEventListener('mousemove', handleMouseMove);
+          } else {
+              document.removeEventListener('mousemove', handleMouseMove);
+          }
+      };
+      
+      handleResize();
+      window.addEventListener('resize', handleResize);
+  });
+</script>
