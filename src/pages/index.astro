@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ITEN from '../components/ITEN.astro';
 import ImgBG from '../layouts/Img-BG.astro';
 ---
 
@@ -13,7 +12,7 @@ import ImgBG from '../layouts/Img-BG.astro';
     <img src="/logo-2.svg" alt="Logo" class="px-2 pt-1 max-sm:fixed" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">
     
     <!-- PROGETTI-->
-    <div class="sm:flex-grow grid grid-rows-11 max-sm:gap-y-24 p-2 mt-48 sm:mt-12 mb-20 uppercase font-semibold text-3xl" data-aos="fade" data-aos-duration="400" data-aos-delay="200" data-aos-easing="ease-in-out">
+    <div class="sm:flex-grow grid grid-rows-11 max-sm:gap-y-24 p-2 mt-48 sm:mt-12 mb-20 uppercase font-semibold text-2xl sm:text-xl lg:text-2xl" data-aos="fade" data-aos-duration="400" data-aos-delay="200" data-aos-easing="ease-in-out">
       <div class="w-full flex items-start justify-center sm:justify-end"  >
         <div class="inline-block sm:mr-[14vw]">
           <a href="/Salmon" class="it">Salmone</a>
@@ -95,10 +94,10 @@ import ImgBG from '../layouts/Img-BG.astro';
     </div>
 
     <!-- Cookie -->
-    <div class="sticky sm:fixed bottom-0 p-2 max-w-[55%] sm:max-w-sm sm:mb-24 lg:mb-28 leading-none " data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000" data-aos-easing="ease-in-out">
-      <div id="cookie-notice" class="flex cookie text-base sm:text-lg font-bold leading-none relative" >
+    <div class="sticky sm:fixed bottom-0 p-2 max-w-[55%] sm:max-w-sm sm:mb-20 lg:mb-28 leading-none " data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000" data-aos-easing="ease-in-out">
+      <div id="cookie-notice" class="flex cookie text-base font-bold leading-none relative" >
         <p class="cookie-close cursor-pointer absolute top-0 left-0 flex items-center hover:opacity-50 transition-opacity leading-none">[<span class="rotate-45 scale-110">+</span>]</p>
-        <div class="flex flex-col justify-between items-start mt-6 sm:mt-7">
+        <div class="flex flex-col justify-between items-start mt-6 sm:mt-6">
           <div>
             <p class="it leading-none">Continuando a navigare su questo sito, accetti automaticamente i cookie.</p>
             <p class="en leading-none">By continuing to browse this site, you automatically accept cookies.</p>
@@ -108,7 +107,7 @@ import ImgBG from '../layouts/Img-BG.astro';
     </div>
 
     <!-- FOOTER -->
-    <div class="max-sm:hidden fixed bottom-0 px-2 grid grid-cols-4 sm:grid-cols-12 gap-4 sm:gap-2 text-xl lg:text-3xl font-bold w-full">
+    <div class="max-sm:hidden fixed bottom-0 px-2 pb-1 grid grid-cols-4 sm:grid-cols-12 gap-4 sm:gap-2 text-lg lg:text-2xl font-bold w-full">
       <div class="flex flex-col col-span-3">
         <p class="leading-none">Dotdotdot</p>
         <div class="leading-none">
@@ -124,13 +123,17 @@ import ImgBG from '../layouts/Img-BG.astro';
       <div class="flex flex-col col-span-3">
         <p class="it uppercase leading-none">Ingresso Gratuito</p>
         <p class="en uppercase leading-none">Free Entry</p>
-        <div>
+        <div class="leading-none">
           <a href="https://www.instagram.com/rawscenarios?igsh=MThjemFlamU4OG1yeg==" target="_blank" class="hover:opacity-50 transition-opacity leading-none">@RAWSCENARIOS</a>
         </div>
       </div>
-      <div class="sm:ml-auto col-span-4 sm:col-span-3 max-sm:flex max-sm:flex-cols max-sm:justify-between">
+      <div class="sm:ml-auto col-span-4 sm:col-span-3 max-sm:flex max-sm:flex-cols max-sm:justify-between leading-none">
         <a href="/about" class="hover:opacity-50 transition-opacity leading-none">About</a>
-        <ITEN />
+        <div class=" flex uppercase leading-none ">
+          <h1 class="cursor-pointer leading-none" id="it-button">IT</h1>
+          <h1 class="leading-none">/</h1>
+          <h1 class="cursor-pointer leading-none" id="en-button">EN</h1>
+        </div>
       </div>
     </div>
   
@@ -157,9 +160,9 @@ import ImgBG from '../layouts/Img-BG.astro';
         </div>
       </div>
       
-      <div class="mt-4 flex justify-between items-center text-2xl">
+      <div class="flex justify-between items-center text-2xl">
         <a href="/about" class="hover:opacity-50 transition-opacity">About</a>
-        <div class=" flex text-2xl uppercase">
+        <div class=" flex uppercase">
           <h1 class="cursor-pointer" id="it-button-2">IT</h1>
           <h1>/</h1>
           <h1 class="cursor-pointer" id="en-button-2">EN</h1>
@@ -172,39 +175,51 @@ import ImgBG from '../layouts/Img-BG.astro';
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", function() {
-      const itButton = document.getElementById("it-button-2");
-      const enButton = document.getElementById("en-button-2");
+    const itButton2 = document.getElementById("it-button-2");
+    const enButton2 = document.getElementById("en-button-2");
   
-      itButton.addEventListener("click", function() {
-        toggleLanguage('it', 'en');
-      });
+    itButton2.addEventListener("click", function() {
+      toggleLanguage('it', 'en', itButton2, enButton2);
+    });
   
-      enButton.addEventListener("click", function() {
-        toggleLanguage('en', 'it');
-      });
+    enButton2.addEventListener("click", function() {
+      toggleLanguage('en', 'it', itButton2, enButton2);
+    });
   
-      function toggleLanguage(showClass, hideClass) {
-        const showElements = document.querySelectorAll(`.${showClass}`);
-        const hideElements = document.querySelectorAll(`.${hideClass}`);
-        
-        showElements.forEach(element => {
-            element.style.display = 'block';
-        });
+    const itButton = document.getElementById("it-button");
+    const enButton = document.getElementById("en-button");
 
-        hideElements.forEach(element => {
-            element.style.display = 'none';
-        });
+    itButton.addEventListener("click", function() {
+      toggleLanguage('it', 'en', itButton, enButton);
+    });
 
-        if (showClass === 'it') {
-            itButton.style.opacity = '1';
-            enButton.style.opacity = '0.5';
-        } else {
-            itButton.style.opacity = '0.5';
-            enButton.style.opacity = '1';
-        }
+    enButton.addEventListener("click", function() {
+      toggleLanguage('en', 'it', itButton, enButton);
+    });
+
+    function toggleLanguage(showClass, hideClass, itBtn, enBtn) {
+      const showElements = document.querySelectorAll(`.${showClass}`);
+      const hideElements = document.querySelectorAll(`.${hideClass}`);
+      
+      showElements.forEach(element => {
+          element.style.display = 'block';
+      });
+
+      hideElements.forEach(element => {
+          element.style.display = 'none';
+      });
+
+      if (showClass === 'it') {
+          itBtn.style.opacity = '1';
+          enBtn.style.opacity = '0.5';
+      } else {
+          itBtn.style.opacity = '0.5';
+          enBtn.style.opacity = '1';
       }
-  
-      toggleLanguage('it', 'en');
+    }
+
+    toggleLanguage('it', 'en', itButton2, enButton2);
+    toggleLanguage('it', 'en', itButton, enButton);
   });
 
 

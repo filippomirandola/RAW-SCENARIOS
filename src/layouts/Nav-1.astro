@@ -8,15 +8,15 @@ interface Props {
 const { prev, next } = Astro.props;
 ---
 <!-- NAV 1 -->
-<div class="fixed top-0 sm:grid sm:grid-cols-12 gap-2 w-full p-2 z-50 h-12">
+<div class="fixed top-0 sm:grid sm:grid-cols-12 gap-2 w-full p-2 z-50 h-12 text-xl  lg:text-2xl xl:text-3xl uppercase font-medium">
     <a href="/" class="sm:hidden" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">
         <img src="/logo-1.svg" alt="Logo" class="w-full sm:w-auto">
     </a>
     <div class="col-span-6 -mt-[6px] max-sm:hidden ">
-        <a href="/" class="uppercase font-medium text-2xl lg:text-4xl " data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">rawscenarios</a>
+        <a href="/" class="" data-aos="fade" data-aos-duration="300" data-aos-easing="ease-in-out">rawscenarios</a>
     </div>
 
-    <div class="col-span-6 hidden sm:flex font-medium text-2xl lg:text-4xl uppercase justify-between -mt-[6px]">
+    <div class="col-span-6 hidden sm:flex uppercase justify-between -mt-[6px]">
         <a href={prev} class="it" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">precedente</a>
         <a href={prev} class="en" data-aos="fade" data-aos-duration="300" data-aos-delay="100" data-aos-easing="ease-in-out">previous</a>
         <a href={next} class="it" data-aos="fade" data-aos-duration="300" data-aos-delay="200" data-aos-easing="ease-in-out">successivo</a>
